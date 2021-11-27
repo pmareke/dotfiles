@@ -1,24 +1,16 @@
-ZSH_THEME="fwalch"
-
 export LANG=C
 export TERM=xterm-256color
 export ZSH=/Users/pmareke/.oh-my-zsh
 export EDITOR='nvim'
 export SHELL='zsh'
-export GODIR="${HOME}/Developer/go/go"
-export GOPATH="${HOME}/.go"
-export GODIR="${HOME}/Developer/go/go"
-export GOROOT="${HOME}/Developer/go"
-export PATH="$PATH:${GOPATH}/bin"
 export FZF_DEFAULT_OPTS='--layout=default --border --min-height 15'
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_PREVIEW_COMMAND="bat --style=numbers,changes --wrap never --color always {} || cat {} || tree -C {}"
 export FZF_CTRL_T_OPTS="--min-height 10 --preview-window down:80% --preview-window noborder --preview '($FZF_PREVIEW_COMMAND) 2> /dev/null'"
 export PATH="/usr/local/bin:/opt/maven/bin:/usr/local/sbin:/Users/pmareke/Developer/go/go/bin:$PATH"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/"
 export NVM_DIR="$HOME/.nvm"
 
-plugins=(git kubectl z zsh-autosuggestions)
+plugins=(git z zsh-autosuggestions)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -28,7 +20,6 @@ plugins=(git kubectl z zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.fzf/shell/key-bindings.zsh
-source <(kubectl completion zsh)
 
 #
 # Completion
