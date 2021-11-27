@@ -8,6 +8,7 @@ tap "homebrew/cask-fonts"
 
 brew "cask"
 brew "htop"
+brew "curl"
 brew "bat"
 brew "tree"
 brew "exa"
