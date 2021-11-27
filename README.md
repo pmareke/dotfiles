@@ -65,6 +65,10 @@ brew bundle --global
 - Install `VSCode` theme: https://github.com/tallpants/vscode-theme-iterm2
 - Copy `z.sh` to `~/`
 
+## Tmux Plugin Manager
+
+- Run `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+
 ## Node
 
 ```sh  
