@@ -83,28 +83,3 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ## Karabiner
 
 - Copy the `karabiner.json` file into the app config folder.
-
-## GPG key
-
-1. Generate keys:
-
-```sh
-keybase pgp gen --multi
-```
-
-2. Run `gpg --list-signatures` and copy the serial numbernext to "sig" (it's 3B9A89CAE5009078 below):
-   
-3. Configure git to automatically gpgsign commits. This consists of pointing git to your signing key ID, and then enabling commit automatic signing.
-
-```sh
-git config --global user.signingkey <PUB-ID>
-git config --global commit.gpgsign true
-```
-
-4. Copy the publickey into your clipboard:
-
-```sh
-keybase pgp export -q <PUB-ID> | pbcopy
-```
-
-5. Open https://github.com/settings/keys and paste the public key there.
