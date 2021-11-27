@@ -1,9 +1,6 @@
 [nodejs]
 symbol = ""
 
-[scala]
-symbol = ""
-
 [gcloud]
 disabled = true
 
