@@ -1,0 +1,87 @@
+{
+  "eslint.format.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "diffEditor.renderSideBySide": true,
+  "editor.cursorStyle": "line",
+  "editor.fontFamily": "Jetbrains Mono",
+  "editor.fontWeight": "bold",
+  "editor.lineNumbers": "relative",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontSize": 16,
+  "vetur.validatio.template": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": true,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "editor.suggestSelection": "first",
+  "workbench.statusBar.visible": true,
+  "editor.largeFileOptimizations": false,
+  "explorer.confirmDelete": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.bracketPairColorization.enabled": true,
+  "typescript.suggest.paths": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "editor.inlineSuggest.enabled": true,
+  "vim.leader": ",",
+  "vim.easymotion": true,
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": "#8FBCBB",
+  "vim.statusBarColors.insert": "#BF616A",
+  "vim.statusBarColors.visual": "#B48EAD",
+  "vim.statusBarColors.visualline": "#B48EAD",
+  "vim.statusBarColors.visualblock": "#A3BE8C",
+  "vim.statusBarColors.replace": "#D08770",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [":"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["leader", "w", "q"],
+      "commands": [
+        "workbench.action.files.save",
+        "workbench.action.closeActiveEditor"
+      ]
+    }
+  ],
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#8FBCBB",
+    "statusBar.noFolderBackground": "#8FBCBB",
+    "statusBar.debuggingBackground": "#8FBCBB",
+    "statusBar.foreground": "#434C5E",
+    "statusBar.debuggingForeground": "#434C5E"
+  },
+  "redhat.telemetry.enabled": false,
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  }
+}
+n

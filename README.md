@@ -84,6 +84,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
+## VSCode
+
+- Paste the content of the `settings.json` in the VSCode settings.
+
 ## Karabiner
 
 - Copy the `karabiner.json` file into the app config folder.
