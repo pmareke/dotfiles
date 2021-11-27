@@ -61,6 +61,7 @@ brew bundle --global
 
 - Add `iterm` profile `iterm.json`.
 - Install `oh-my-zsh`: https://github.com/robbyrussell/oh-my-zsh
+- Copy `key-bindings.zsh` in to `~/.fzf/shell`
 - Install `VSCode` theme: https://github.com/tallpants/vscode-theme-iterm2
 - Copy `z.sh` to `~/`
 
