@@ -79,6 +79,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
+## Karabiner
+
+- Copy the `karabiner.json` file into the app config folder.
+
 ## GPG key
 
 1. Generate keys:
