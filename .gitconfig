@@ -1,0 +1,56 @@
+[user]
+	name = Pedro López Mareque
+	email = Pedro.lopez.mareque@gmail.com
+[core]
+	excludesfile = /Users/pmareke/.gitignore_global
+	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[commit]
+	template = /Users/pmareke/.gitmessage
+[color]
+	ui = true
+  branch = auto
+  diff = auto
+  status = auto
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[http]
+	cookiefile = /Users/pmareke/.gitcookies
+[alias]
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

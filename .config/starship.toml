@@ -1,0 +1,14 @@
+[nodejs]
+symbol = ""
+
+[scala]
+symbol = ""
+
+[gcloud]
+disabled = true
+
+[username]
+style_user = "green bold"
+format = "[$user]($style) at "
+disabled = false
+show_always = true
