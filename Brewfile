@@ -21,6 +21,7 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "starship"
 
+cask "obsidian"
 cask "meetingbar"
 cask "raycast"
 cask "iterm"
