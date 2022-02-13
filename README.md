@@ -41,12 +41,6 @@ ssh -T git@github.com -i ~/.ssh/github_rsa
 git clone git@github.com:pmareke/dotfiles.git
 ```
 
-## OS Settings
-
-- Run `mac_setup.sh` script.
-- Run `git_setup.sh` script.
-- Restart the laptop to apply changes.
-
 ## Installing software via Homebrew
 
 All software installed on the system must be listed in `Brewfile`.
@@ -59,15 +53,11 @@ brew bundle --global
 
 ## Shell
 
-- Add `iterm` profile `iterm.json`.
 - Install `oh-my-zsh`: https://github.com/robbyrussell/oh-my-zsh
 - Copy `key-bindings.zsh` in to `~/.fzf/shell`
 - Install `VSCode` theme: https://github.com/tallpants/vscode-theme-iterm2
 - Copy `z.sh` to `~/`
 
-## Tmux Plugin Manager
-
-- Run `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 
 ## Node
 

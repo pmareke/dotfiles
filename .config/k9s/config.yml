@@ -1,0 +1,47 @@
+k9s:
+  refreshRate: 2
+  maxConnRetry: 5
+  enableMouse: false
+  headless: true
+  logoless: true
+  crumbsless: true
+  readOnly: false
+  noIcons: true
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: 60
+    fullScreenLogs: false
+    textWrap: false
+    showTime: false
+  currentContext: gke_maximal-record-121815_europe-west1_eu-west1-c1
+  currentCluster: gke_maximal-record-121815_europe-west1_eu-west1-c1
+  clusters:
+    gke_maximal-record-121815_europe-west1_eu-west1-c1:
+      namespace:
+        active: all
+        favorites:
+        - cert-manager
+        - all
+        - default
+      view:
+        active: po
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.31
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      portForwardAddress: localhost
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  screenDumpDir: /var/folders/9k/lq8gv52n071430qrtcr7p38c0000gn/T/k9s-screens-pmareke
