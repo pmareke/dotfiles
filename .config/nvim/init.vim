@@ -125,7 +125,7 @@ let g:indentLine_setColors = 0
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:ale_linters = { 'python': ['flake8', 'pylint'] }
+let g:ale_linters = { 'python': ['flake8', 'pylint', 'mypy'] }
 let g:ale_fixers = { 'python': ['yapf'] }
 
 " VimFugitive
