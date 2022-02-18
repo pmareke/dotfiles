@@ -1,5 +1,3 @@
-alias lg='lazygit'
-alias kill='fkill'
 alias ls='exa'
 alias ll='ls -l'
 alias la='ls -la'
@@ -13,6 +11,12 @@ alias o='open .'
 alias rf='rm -rf'
 alias t='tree -L 1'
 alias cat='bat'
+
+# Python
+alias python=python3
+alias ac='source venv/bin/activate'
+alias dc=deactivate
+
 alias aliasconfig='vim ~/.aliases'
 alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.config/nvim/init.vim'
@@ -22,5 +26,31 @@ alias gitconfig='vim ~/.gitconfig'
 alias ga='git add -p'
 alias gdi='git checkout -- .'
 
-alias s='npm run serve'
-alias e2e='npm run test:e2e'
+## K8S
+alias k='kube-prompt'
+alias ktx='kubectx'
+alias kns='kubens'
+
+# EU
+alias gsh="gcloud compute ssh --tunnel-through-iap"
+alias gcp="gcloud compute scp --tunnel-through-iap"
+
+# BR
+alias gshbr="gcloud compute ssh --tunnel-through-iap --zone southamerica-east1-b"
+alias gcpbr="gcloud compute scp --tunnel-through-iap --zone southamerica-east1-b"
+
+# USC
+alias gshus="gcloud compute ssh --tunnel-through-iap --zone us-central1-a"
+alias gcpus="gcloud compute scp --tunnel-through-iap --zone us-central1-a"
+
+alias k9sbr="KUBECONFIG=~/.kube/config_br k9s"
+alias kbr="KUBECONFIG=~/.kube/config_br kubectl"
+alias k9susc="KUBECONFIG=~/.kube/config_usc k9s"
+alias kusc="KUBECONFIG=~/.kube/config_usc kubectl"
+
+#CONTENT-EXTRACTION cluster
+alias k9scontent="KUBECONFIG=~/.kube/config_content k9s"
+
+# DOCKER
+alias drm='docker rm -f $(docker ps -aq)'
+

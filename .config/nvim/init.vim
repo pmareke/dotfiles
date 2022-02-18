@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+  Plug 'tpope/vim-projectionist'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'editorconfig/editorconfig-vim'
   Plug 'dense-analysis/ale'
@@ -125,7 +126,7 @@ let g:indentLine_setColors = 0
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:ale_linters = { 'python': ['flake8', 'pylint', 'mypy'] }
+let g:ale_linters = { 'python': ['flake8', 'pylint'] }
 let g:ale_fixers = { 'python': ['yapf'] }
 
 " VimFugitive
@@ -233,3 +234,17 @@ augroup test
     \   TestFile |
     \ endif
 augroup END
+
+" Vim Projectionist
+ let g:projectionist_heuristics = {
+ 	      \   '*': {
+ 	      \     'spec/*_spec.py': {
+ 	      \       'alternate': '{}.py',
+ 	      \       'type': 'model'
+ 	      \     },
+ 	      \     '*.py': {
+ 	      \       'alternate': 'spec/{}_spec.py',
+ 	      \       'type': 'test'
+ 	      \     }
+ 	      \   }
+ 	      \ }
