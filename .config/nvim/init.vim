@@ -1,7 +1,4 @@
 call plug#begin('~/.vim/plugged')
-  Plug 'tpope/vim-projectionist'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'godlygeek/tabular'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'editorconfig/editorconfig-vim'
   Plug 'dense-analysis/ale'
@@ -14,9 +11,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'chriskempson/base16-vim'
   Plug 'Yggdroot/indentLine'
-  Plug 'tpope/vim-rails'
   Plug 'davidhalter/jedi-vim'
   Plug 'vim-test/vim-test'
+  Plug 'sansyrox/vim-python-virtualenv'
 call plug#end()
 
 " Config
@@ -128,7 +125,7 @@ let g:indentLine_setColors = 0
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:ale_linters = { 'python': ['pyright', 'flake8', 'pylint'] }
+let g:ale_linters = { 'python': ['flake8', 'pylint'] }
 let g:ale_fixers = { 'python': ['yapf'] }
 
 " VimFugitive
@@ -225,10 +222,10 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " VimTest
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>a :A<CR>
-let test#strategy = "kitty"
-let test#python#runner = 'pytest'
+let test#python#runner = 'mamba'
 let g:test#echo_command = 0
 let test#python#pytest#options = '-x'
+let g:python3_host_prog='/usr/bin/python3'
 
 augroup test
   autocmd!
@@ -236,18 +233,3 @@ augroup test
     \   TestFile |
     \ endif
 augroup END
-
-" Vim Projectionist
-let g:projectionist_heuristics = {
-	      \   '*': {
-	      \     '*_test.py': {
-	      \       'alternate': '{}.py',
-	      \       'type': 'model'
-	      \     },
-	      \     '*.py': {
-	      \       'alternate': '{}_test.py',
-	      \       'type': 'test'
-	      \     }
-	      \   }
-	      \ }
-
