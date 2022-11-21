@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
-let g:netrw_dirhist_6='/Users/pmareke/Empathy/X/search-adapter/src/empathy'
-let g:netrw_dirhist_5='/Users/pmareke/Empathy/X/search-adapter/src/empathy/__tests__'
-let g:netrw_dirhist_4='/Users/pmareke/Empathy/clients/lefties/lefties-eb-lefties/src/main/resources/pre'
-let g:netrw_dirhist_3='/Users/pmareke/Empathy/clients/lefties/lefties-eb-lefties/src/main/resources/local'
-let g:netrw_dirhist_2='/Users/pmareke/Empathy/clients/distriplac/distriplac-eb-distriplac'
-let g:netrw_dirhist_1='/Users/pmareke/Empathy/clients/perfumesclub/perfumesclub-sb-perfumesclub/src/main/webapp/WEB-INF/config/spring'
