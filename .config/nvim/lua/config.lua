@@ -20,6 +20,6 @@ set.relativenumber=true
 set.showmatch=true
 set.tags=tags
 set.textwidth=80
-set.undodir="~/.vim/undodir"
+-- set.undodir="~/.vim/undodir"
 set.undofile=true
 set.wildmenu=true
