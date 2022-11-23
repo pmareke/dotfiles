@@ -1,6 +1,5 @@
 -- Keymaps
-vim.keymap.set('n', '<Leader>I', ':PackerInstall<CR>')
-vim.keymap.set('n', '<Leader>C', ':PackerClean<CR>')
+vim.keymap.set('n', '<Leader>I', ':PackerSync<CR>')
 vim.keymap.set('n', '<Leader>wq', ':wq<CR>')
 vim.keymap.set('n', '<Leader>w', ':w<CR>')
 vim.keymap.set('n', '<Leader>q!', ':q!<CR>')
