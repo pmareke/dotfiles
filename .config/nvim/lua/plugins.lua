@@ -47,9 +47,17 @@ return require('packer').startup(function(use)
       require('nvim-test').setup()
     end
   }
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end}
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = '*',
+    config = function()
+      require("toggleterm").setup()
+    end
+  }
+  use {
+    'stsewd/isort.nvim',
+    run = ':UpdateRemotePlugins'
+  }
 
   if packer_bootstrap then
     require('packer').sync()
