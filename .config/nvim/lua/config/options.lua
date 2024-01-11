@@ -52,11 +52,9 @@ local options = {
   foldenable = false,
   foldlevelstart = 20,
   foldmethod = "indent",
-  backupdir = "~/.tmp",
-  directory = "~/.tmp",
-  undodir = "~/.config/nvim/undodir",
   showcmd = true,
-  ruler = true
+  ruler = true,
+  winheight = 38
 }
 
 for k, v in pairs(options) do

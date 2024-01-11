@@ -120,7 +120,8 @@ return {
           'solargraph',
           'rubocop',
           "jsonls",
-
+          "pyright",
+          "gopls"
         },
         handlers = {
           lsp_zero.default_setup,

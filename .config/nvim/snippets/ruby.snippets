@@ -1,0 +1,18 @@
+snippet t
+	def test_${1:case_name}
+		${0}
+	end
+
+snippet T
+  # frozen_string_literal: true
+
+  require "minitest/autorun"
+  require "minitest/pride"
+
+  class Test${0} < Minitest::Test
+    def test_${1}
+      ${2}
+
+      assert_equal ${3}, ${4}
+    end
+  end

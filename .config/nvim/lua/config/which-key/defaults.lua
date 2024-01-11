@@ -8,8 +8,9 @@ return {
   n = { ":BufferNext<CR>", "Next tab"},
   f = { ":Telescope live_grep<CR>", "Find in files"},
   a = { ":A<CR>", "Alternate"},
+  A = { ":GoAlternate<CR>", "Alternate"},
   o = { ":Telescope buffers<CR>", "Open Buffer" },
-  t = { "<cmd>TestNearest<cr>", "Run Nearest"},
+  t = { ":w<CR>:TestFile<cr>", "Run File"},
   u = {
     name = "UI",
     c = { "<cmd>lua require('config.utils').toggle_set_color_column()<CR>", "Toggle Color Line" },
@@ -136,6 +137,7 @@ return {
     s = { "<cmd>TestSuite<cr>", "Run Suite"},
     l = { "<cmd>TestLast<cr>", "Run Latest"},
     v = { "<cmd>TestVisit<cr>", "Run Visit"},
+    n = { ":lua notify_test()<CR>", "Notify"},
   },
   ['\\'] = {
     name = "+Terminal",

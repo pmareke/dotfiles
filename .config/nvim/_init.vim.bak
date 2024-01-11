@@ -1,0 +1,114 @@
+scriptencoding utf-8
+set guicursor+=n:hor20-Cursor/lCursor
+set encoding=utf-8
+set backspace=indent,eol,start
+set history=500
+set ruler
+set showcmd
+set showmatch
+set nowrap
+set backupdir=~/.tmp
+set directory=~/.tmp
+set autoread
+set wmh=0
+set viminfo+=!
+set guioptions-=T
+set et
+set sw=2
+set smarttab
+set noincsearch
+set ignorecase smartcase
+set laststatus=2
+set relativenumber
+set number
+set gdefault
+set autoindent
+set grepprg=ag
+set wildignore+=tmp/**
+set shiftround
+set nofoldenable
+set wildmenu
+set wildmode=list:full
+set ttimeout
+set ttimeoutlen=1
+set timeoutlen=500
+set list listchars=tab:»·,trail:·
+set clipboard=unnamed
+set undodir=~/.config/nvim/undodir
+set undofile
+set foldlevelstart=20
+set foldmethod=indent
+set rtp+=/usr/local/opt/fzf
+set tags=./tags;
+set scrolloff=0
+
+command! Q q
+command! Qall qall
+command! QA qall
+command! E e
+command! W w
+command! Wq wq
+
+map Q @q
+map K <Nop>
+map <leader>I :PluginInstall<CR>
+map <leader>C :PluginClean<CR>
+map <leader>w :w<CR>
+map <leader>x :x<CR>
+map <leader>q :q!<CR>
+map <leader>R :so %<Enter>
+map <leader>c :bd<CR>
+map <leader>C :cclose<CR>
+map <space> za
+map <Leader>t :w<cr>:TestFile<CR>
+map <leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
+map <Leader>sn :UltiSnipsEdit<CR>
+nmap <leader>n gt
+imap jj <esc>
+nmap k gk
+nmap j gj
+nmap <CR> :noh<CR><CR>
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+hi MatchParen cterm=none ctermbg=black ctermfg=yellow
+highlight ColorColumn ctermbg=235
+highlight SignColumn ctermbg=black
+highlight PmenuSel ctermfg=black
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+augroup myfiletypes
+    autocmd!
+    autocmd FileType ruby,eruby,yaml setlocal ai sw=2 sts=2 et
+    autocmd FileType ruby,eruby,yaml setlocal path+=lib
+    autocmd FileType ruby,eruby,yaml setlocal colorcolumn=80
+    autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
+augroup END
+
+augroup Mkdir
+    autocmd!
+    autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
+augroup END
+
+au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
+
+if has("autocmd")
+  filetype plugin indent on
+  augroup vimrcEx
+    au!
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal g`\"" |
+          \ endif
+  augroup END
+endif
+

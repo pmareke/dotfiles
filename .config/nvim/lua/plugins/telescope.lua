@@ -31,8 +31,8 @@ return {
           sorting_strategy = "ascending",
           layout_strategy = "horizontal",
           layout_config = {
-            width = 0.99,
-            height = 0.99,
+            width = 0.5,
+            height = 0.5,
             prompt_position = "top",
             preview_cutoff = 120,
           },
@@ -42,8 +42,6 @@ return {
             theme = "dropdown",
             previewer = false,
             layout_config = {
-              width = 0.99,
-              height = 0.99,
               prompt_position = "top",
               preview_cutoff = 10,
             },
@@ -51,7 +49,6 @@ return {
           git_files = {
             previewer = true,
             layout_config = {
-              height = 0.8,
               prompt_position = "top",
               preview_cutoff = 120,
             },
