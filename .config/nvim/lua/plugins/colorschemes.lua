@@ -10,16 +10,8 @@ return {
       vim.g.gruvbox_material_ui_contrast = 'high' -- The contrast of line numbers, indent lines, etc.
       vim.g.gruvbox_material_float_style = 'dim'  -- Background of floating windows
       vim.g.gruvbox_material_statusline_style = 'material'
-
-      -- if (vim.o.background == 'light') then
-      --   vim.g.gruvbox_material_colors_override = { bg0 = '#f9f5d7' }
-      -- else
-      --   vim.g.gruvbox_material_colors_override = { bg0 = '#0e1010' }
-      -- end
-
       vim.g.gruvbox_material_colors_override = { bg0 = '#0e1010' } -- #0e1010
       vim.g.gruvbox_material_better_performance = 1
-      -- vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   {
@@ -39,12 +31,10 @@ return {
           comment = 'muted',
           link = 'iris',
           punctuation = 'subtle',
-
           error = 'love',
           hint = 'iris',
           info = 'foam',
           warn = 'gold',
-
           headings = {
             h1 = 'iris',
             h2 = 'foam',
@@ -56,12 +46,9 @@ return {
         },
         highlight_groups = {
           ColorColumn = { bg = 'rose' },
-
-          -- Blend colours against the "base" background
           CursorLine = { bg = 'foam', blend = 10 },
           StatusLine = { fg = 'love', bg = 'love', blend = 10 },
           Search = { bg = 'gold', inherit = false },
-
           TelescopeBorder = { fg = "highlight_high", bg = "none" },
           TelescopeNormal = { bg = "none" },
           TelescopePromptNormal = { bg = "base" },
@@ -71,7 +58,6 @@ return {
         },
       })
 
-      -- vim.cmd.colorscheme 'rose-pine-moon'
     end
   },
   {
@@ -79,7 +65,6 @@ return {
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      -- vim.cmd.colorscheme 'primer_dark'
     end
   },
   {
@@ -113,7 +98,6 @@ return {
           }
         }
       })
-      -- vim.cmd("colorscheme kanagawa-wave")
     end
   },
   {
@@ -133,18 +117,10 @@ return {
         reverse_visual = false,
         dim_nc = false,
         cmp_cmdline_disable_search_highlight_group = false, -- disable search highlight group for cmp item
-        -- if `transparent_float_background` false, make telescope border color same as float background
         telescope_border_follow_float_background = false,
-        -- diagnostic virtual text background, like error lens
         diagnostic_virtual_text_background = false,
-
-        -- override the `lua/vitesse/palette.lua`, go to file see fields
         colors = {},
-        themes = {
-          -- background = "#000000",
-        },
       }
-
       vim.cmd.colorscheme 'vitesse'
     end
   },
@@ -176,7 +152,6 @@ return {
         dim_inactive = false,
         transparent_mode = false,
       })
-      -- vim.cmd.colorscheme("gruvbox")
     end
   }
 }
