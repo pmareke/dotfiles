@@ -62,7 +62,10 @@ return {
             ".DS_Store",
             "thumbs.db",
             ".idea",
-            ".vscode"
+            ".vscode",
+            ".pytest_cache",
+            ".mypy_cache",
+            ".git",
           },
         },
       },
