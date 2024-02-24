@@ -5,7 +5,6 @@ return {
     lazy = true,
     config = false,
     init = function()
-      -- Disable automatic setup, we are doing it manually
       vim.g.lsp_zero_extend_cmp = 0
       vim.g.lsp_zero_extend_lspconfig = 0
     end,
@@ -15,8 +14,6 @@ return {
     lazy = false,
     config = true,
   },
-
-  -- Autocompletion
   {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -28,18 +25,11 @@ return {
       },
     },
     config = function()
-      -- Here is where you configure the autocompletion settings.
       local lsp_zero = require('lsp-zero')
       lsp_zero.extend_cmp()
-
-
-      -- And you can configure cmp even more, if you want to.
       local cmp = require('cmp')
       local cmp_action = lsp_zero.cmp_action()
-
-      -- require('luasnip.loaders.from_vscode').lazy_load()
       require('luasnip.loaders.from_snipmate').lazy_load()
-      
       cmp.setup({
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
@@ -67,6 +57,7 @@ return {
           { name = 'treesitter' },
           { name = 'crates' },
           { name = 'tmux' },
+          { name = "copilot"},
         },
         snippet = {
           expand = function(args)
@@ -76,8 +67,6 @@ return {
       })
     end
   },
-
-  -- LSP
   {
     'neovim/nvim-lspconfig',
     cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
@@ -90,11 +79,9 @@ return {
     config = function()
       local lsp_zero = require('lsp-zero')
       lsp_zero.extend_lspconfig()
-
       lsp_zero.on_attach(function(_, bufnr)
         lsp_zero.default_keymaps({ buffer = bufnr })
         opts = { buffer = bufnr, silent = true }
-
         vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
         vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
         vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -110,14 +97,12 @@ return {
         vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
         vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
       end)
-
-
       local lspconfig = require('lspconfig')
-
       require('mason').setup({})
       require('mason-lspconfig').setup({
         ensure_installed = {
           'solargraph',
+          'ruby_ls',
           'rubocop',
           "jsonls",
           "pyright",
@@ -169,5 +154,5 @@ return {
         },
       })
     end
-  }
+  },
 }

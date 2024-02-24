@@ -1,5 +1,7 @@
 return {
   mode = { "n", "v" },
+  
+  L = { ":Lazy<CR>", "Lazy" },
   w = { ":w!<CR>", "Save" },
   x = { ":x<CR>", "Save and Quit" },
   q = { ":q!<CR>", "Quit" },

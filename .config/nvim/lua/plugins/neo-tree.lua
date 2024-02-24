@@ -66,6 +66,7 @@ return {
             ".pytest_cache",
             ".mypy_cache",
             ".git",
+            ".ruby-lsp"
           },
         },
       },

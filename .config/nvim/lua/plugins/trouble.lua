@@ -5,13 +5,11 @@ return {
   lazy = true,
   config = function()
     require("trouble").setup {
-      -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
       mode = "workspace_diagnostics",
       position = "bottom", -- position of the list can be: bottom, top, left, right
       height = 15,
       padding = false,
       action_keys = {
-        -- key mappings for actions in the trouble list
         close = "q",                -- close the list
         cancel = "<esc>",           -- cancel the preview and get back to your last window / buffer / cursor
         refresh = "r",              -- manually refresh
