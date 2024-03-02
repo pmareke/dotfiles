@@ -8,7 +8,6 @@ return {
   c = { ":bd<CR>", "Close Buffer" },
   h = { ":nohlsearch<CR>", "No Highlight" },
   n = { ":BufferNext<CR>", "Next tab"},
-  o = { ":Telescope buffers<CR>", "Open Buffer" },
   t = { ":w<CR>:TestFile<cr>", "Run File"},
   f = { ":Telescope live_grep<CR>", "Find in files"},
   rf = { [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
@@ -136,5 +135,10 @@ return {
     h = { "<cmd>ToggleTerm direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm direction=vertical size=100 <cr>", "Vertical" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+  },
+  o = {
+    name = "Overseer",
+    r = { ":OverseerRun<CR>", "Run task" },
+    t = { ":OverseerToggle<CR>", "Toggle panel tasks" },
   },
 }
