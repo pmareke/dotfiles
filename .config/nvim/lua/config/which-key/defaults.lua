@@ -8,33 +8,32 @@ return {
   c = { ":bd<CR>", "Close Buffer" },
   h = { ":nohlsearch<CR>", "No Highlight" },
   n = { ":BufferNext<CR>", "Next tab"},
-  f = { ":Telescope live_grep<CR>", "Find in files"},
-  a = { ":A<CR>", "Alternate"},
-  A = { ":GoAlternate<CR>", "Alternate"},
   o = { ":Telescope buffers<CR>", "Open Buffer" },
   t = { ":w<CR>:TestFile<cr>", "Run File"},
-  u = {
-    name = "UI",
-    c = { "<cmd>lua require('config.utils').toggle_set_color_column()<CR>", "Toggle Color Line" },
-    l = { "<cmd>lua require('config.utils').toggle_cursor_line()<CR>", "Toggle Cursor Line" },
-    b = { "<cmd>lua require('config.utils').change_background()<CR>", "Toggle Background" },
-    s = {
-      name = "Lualine",
-      h = { "<cmd>lua require('lualine').hide()<CR>", "Hide Lualine" },
-      s = { "<cmd>lua require('lualine').hide({unhide = true})<CR>", "Show Lualine" },
-    },
-    z = {
-      name = "Manage Clutter",
-      d = { "<cmd>lua require('config.utils').declutter_terminal()<CR>", "Declutter Terminal" },
-      c = { "<cmd>lua require('config.utils').clutter_terminal()<CR>", "Clutter Terminal" },
-
-    }
+  R = {
+    name = "Rails",
+    a = { ":A<CR>", "Alternate"},
+    r = { ":R<CR>", "Related"},
+    m = { ":Emodel<CR>", "Model"},
+    v = { ":Eview<CR>", "View"},
+    c = { ":Econtroller<CR>", "Controller"},
+    C = { ":Rails console<CR>", "Console"},
+    g = { ":Generate ", "Generate"},
   },
   r = {
-    name = "Replace",
+    name = "Refactor",
+    m = { "<cmd>lua require('refactoring').refactor('Extract Function')<cr>", "Extract method" },
+    f = { "<cmd>lua require('refactoring').refactor('Extract Function To File')<cr>", "Extract to file" },
+    v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<cr>", "Extract variable" },
+    i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<cr>", "Inline variable" },
+    I = { "<cmd>lua require('refactoring').refactor('Inline Function')<cr>", "Inline function" },
+  },
+  f = {
+    name = "Find and Replace",
+    f = { ":Telescope live_grep<CR>", "Find in files"},
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-    f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+    F = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
   },
   b = {
     name = "Buffers",

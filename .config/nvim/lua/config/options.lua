@@ -53,7 +53,7 @@ local options = {
   foldmethod = "indent",
   showcmd = true,
   ruler = true,
-  winheight = 38
+  winheight = 38,
 }
 
 vim.wo.wrap = false
