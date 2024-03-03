@@ -9,7 +9,8 @@ return {
   h = { ":nohlsearch<CR>", "No Highlight" },
   n = { ":BufferNext<CR>", "Next tab"},
   t = { ":w<CR>:TestFile<cr>", "Run File"},
-  f = { ":Telescope live_grep<CR>", "Find in files"},
+  f = { ":Telescope current_buffer_fuzzy_find<CR>", "Find in file"},
+  F = { ":Telescope live_grep<CR>", "Find in files"},
   rf = { [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
   re = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
   R = {

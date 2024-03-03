@@ -73,10 +73,10 @@ return {
             },
           },
           current_buffer_fuzzy_find = {
-            previewer = true,
+            previewer = false,
             -- theme = "dropdown",
             layout_config = {
-              -- width = 0.5,
+              width = 0.8,
               height = 0.8,
               prompt_position = "top",
               preview_cutoff = 120,
@@ -84,7 +84,7 @@ return {
           },
           live_grep = {
             only_sort_text = true,
-            previewer = true,
+            previewer = false,
             layout_config = {
               horizontal = {
                 width = 0.9,
