@@ -10,7 +10,7 @@ return {
         python = true
       },
       prompt_func_param_type = {
-          python = true
+        python = true
       },
       show_success_message = true
     })
