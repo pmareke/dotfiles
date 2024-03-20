@@ -4,5 +4,5 @@ return {
     gi = "Goto implementation",
     gl = "Goto float diagnostics",
     go = "Goto type definition",
-    gr = "Goto references"
+    gr = "Goto references",
 }

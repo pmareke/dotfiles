@@ -54,6 +54,7 @@ local options = {
   showcmd = true,
   ruler = true,
   winheight = 38,
+  wrap = true
 }
 
 vim.wo.wrap = false

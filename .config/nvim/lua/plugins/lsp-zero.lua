@@ -105,6 +105,7 @@ return {
           'rubocop',
           "jsonls",
           "pyright",
+          "elixirls"
         },
         handlers = {
           lsp_zero.default_setup,
@@ -123,6 +124,7 @@ return {
         servers = {
           ['rubocop'] = { 'ruby' },
           ['jsonls'] = { 'json' },
+          ['elixirls'] = { 'elixir' },
         }
       })
 
