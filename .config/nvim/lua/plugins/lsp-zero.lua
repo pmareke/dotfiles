@@ -102,7 +102,6 @@ return {
         ensure_installed = {
           "jsonls",
           "pyright",
-          "elixirls",
           "terraformls",
           "gopls"
         },
@@ -121,8 +120,8 @@ return {
           timeout_ms = 10000,
         },
         servers = {
+          ['pyright'] = { 'python' },
           ['jsonls'] = { 'json' },
-          ['elixirls'] = { 'elixir' },
           ['terraformls'] = { 'terraform', 'tf' },
           ['gopls'] = { 'go' }
         }
