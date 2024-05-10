@@ -46,7 +46,11 @@ return {
       "python",
       "yaml",
       "ruby",
-      "jsonc"
+      "jsonc",
+      "go",
+      "gomod",
+      "gowork",
+      "gosum",
     },
     incremental_selection = {
       enable = true,

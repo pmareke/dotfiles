@@ -3,6 +3,7 @@ return {
   
   L = { ":Lazy<CR>", "Lazy" },
   w = { ":w!<CR>", "Save" },
+  a = { ":GoAlternate<CR>", "Alternate" },
   x = { ":x<CR>", "Save and Quit" },
   q = { ":q!<CR>", "Quit" },
   c = { ":bd<CR>", "Close Buffer" },
@@ -13,16 +14,6 @@ return {
   F = { ":Telescope live_grep<CR>", "Find in files"},
   rf = { [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
   re = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-  R = {
-    name = "Rails",
-    a = { ":A<CR>", "Alternate"},
-    r = { ":R<CR>", "Related"},
-    m = { ":Emodel<CR>", "Model"},
-    v = { ":Eview<CR>", "View"},
-    c = { ":Econtroller<CR>", "Controller"},
-    C = { ":Rails console<CR>", "Console"},
-    g = { ":Generate ", "Generate"},
-  },
   r = {
     name = "Replace",
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },

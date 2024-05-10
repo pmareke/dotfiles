@@ -100,12 +100,11 @@ return {
       require('mason').setup({})
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'solargraph',
-          'ruby_ls',
-          'rubocop',
           "jsonls",
           "pyright",
-          "elixirls"
+          "elixirls",
+          "terraformls",
+          "gopls"
         },
         handlers = {
           lsp_zero.default_setup,
@@ -122,9 +121,10 @@ return {
           timeout_ms = 10000,
         },
         servers = {
-          ['rubocop'] = { 'ruby' },
           ['jsonls'] = { 'json' },
           ['elixirls'] = { 'elixir' },
+          ['terraformls'] = { 'terraform', 'tf' },
+          ['gopls'] = { 'go' }
         }
       })
 
