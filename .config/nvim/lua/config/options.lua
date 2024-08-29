@@ -3,7 +3,14 @@ vim.g.maplocalleader = ','
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- trigger `autoread` when files changes on disk
+vim.cmd([[
+      autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+      autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+]])
+
 local options = {
+  autoindent = true,                       -- copy indent from current line
   syntax = "on",
   encoding = "utf-8",
   incsearch = true,                        -- make search act like search in modern browsers

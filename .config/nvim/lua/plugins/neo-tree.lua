@@ -66,7 +66,10 @@ return {
             ".pytest_cache",
             ".mypy_cache",
             ".git",
-            ".ruby-lsp"
+            ".ruby-lsp",
+            ".elixir-tools",
+            "_build",
+            ".projections.json"
           },
         },
       },

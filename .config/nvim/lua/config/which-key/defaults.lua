@@ -3,7 +3,7 @@ return {
   
   L = { ":Lazy<CR>", "Lazy" },
   w = { ":w!<CR>", "Save" },
-  a = { ":GoAlternate<CR>", "Alternate" },
+  a = { ":A<CR>", "Alternate" },
   x = { ":x<CR>", "Save and Quit" },
   q = { ":q!<CR>", "Quit" },
   c = { ":bd<CR>", "Close Buffer" },

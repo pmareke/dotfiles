@@ -51,6 +51,9 @@ return {
       "gomod",
       "gowork",
       "gosum",
+      "elixir",
+      "heex",
+      "terraform"
     },
     incremental_selection = {
       enable = true,

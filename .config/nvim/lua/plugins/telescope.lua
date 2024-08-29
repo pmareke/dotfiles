@@ -23,7 +23,6 @@ return {
             },
           },
           previewer = false,
-          -- hidden = true,
           prompt_prefix = "   ",
           file_ignore_patterns = { "poetry.lock", "node_modules", "package-lock.json" },
           initial_mode = "insert",
@@ -74,7 +73,6 @@ return {
           },
           current_buffer_fuzzy_find = {
             previewer = false,
-            -- theme = "dropdown",
             layout_config = {
               width = 0.8,
               height = 0.8,

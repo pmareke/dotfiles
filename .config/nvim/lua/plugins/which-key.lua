@@ -1,8 +1,12 @@
 return {
   "folke/which-key.nvim",
+  dependencies = {
+    "echasnovski/mini.icons",
+  },
   event = "VeryLazy",
   lazy = true,
   opts = {
+    notify = false,
     plugins = {
       marks = false,     -- shows a list of your marks on ' and `
       registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -22,23 +26,20 @@ return {
         g = false,            -- bindings for prefixed with g
       },
     },
-    operators = { gc = "Comments" }, -- show the currently pressed key and its label as a message in the command line
     icons = {
       breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
       separator = "➜", -- symbol used between a key and it's label
       group = "+", -- symbol prepended to a group
     },
-    popup_mappings = {
-      scroll_down = "<c-d>", -- binding to scroll down inside the popup
-      scroll_up = "<c-u>",   -- binding to scroll up inside the popup
-    },
-    window = {
+    win = {
       border = "single",        -- none, single, double, shadow
-      position = "bottom",      -- bottom, top
-      margin = { 2, 0, 2, 0 },  -- extra window margin [top, right, bottom, left]
       padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-      winblend = 0,
       zindex = 1000,            -- positive value to position WhichKey above other floating windows.
+      wo = {
+        margin = { 2, 0, 2, 0 },  -- extra window margin [top, right, bottom, left]
+        position = "bottom",      -- bottom, top
+        winblend = 0,
+      }
     },
     layout = {
       height = { min = 4, max = 25 },                                             -- min and max height of the columns
@@ -46,16 +47,8 @@ return {
       spacing = 3,                                                                -- spacing between columns
       align = "left",                                                             -- align columns left, center or right
     },
-    ignore_missing = false,                                                       -- enable this to hide mappings for which you didn't specify a label
-    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
     show_help = true,                                                             -- show help message on the command line when the popup is visible
     show_keys = true,
-    triggers = "auto",                                                            -- automatically setup triggers
-    triggers_blacklist = {
-      i = { "j", "k" },
-      v = { "j", "k" },
-    },
-    -- Disabled by default for Telescope
     disable = {
       buftypes = {},
       filetypes = { "TelescopePrompt" },
@@ -68,7 +61,6 @@ return {
       mode = "n",
       prefix = "<leader>",
     })
-
-    which_key.register(require('config.which-key.non_leader'))
+    -- which_key.register(require('config.which-key.non_leader'))
   end
 }

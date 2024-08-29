@@ -103,7 +103,8 @@ return {
           "jsonls",
           "pyright",
           "terraformls",
-          "gopls"
+          "gopls",
+          "elixirls",
         },
         handlers = {
           lsp_zero.default_setup,
@@ -120,10 +121,11 @@ return {
           timeout_ms = 10000,
         },
         servers = {
-          ['pyright'] = { 'python' },
+          ['black'] = { 'python' },
           ['jsonls'] = { 'json' },
           ['terraformls'] = { 'terraform', 'tf' },
-          ['gopls'] = { 'go' }
+          ['gopls'] = { 'go' },
+          ['elixirls'] = { 'elixir', 'ex', 'exs' },
         }
       })
 
