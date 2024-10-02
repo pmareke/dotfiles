@@ -59,6 +59,8 @@ return {
             "node_modules",
           },
           never_show = {
+            ".ruff_cache",
+            "__pycache__",
             ".DS_Store",
             "thumbs.db",
             ".idea",
@@ -66,8 +68,6 @@ return {
             ".pytest_cache",
             ".mypy_cache",
             ".git",
-            ".ruby-lsp",
-            ".elixir-tools",
             "_build",
             ".projections.json"
           },

@@ -7,6 +7,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[
       autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
       autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+      autocmd FileType gitcommit setlocal textwidth=200
 ]])
 
 local options = {

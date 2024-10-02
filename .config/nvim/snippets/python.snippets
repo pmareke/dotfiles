@@ -7,3 +7,11 @@ snippet ehc
 snippet ehcw
   expect($1).to(have_been_called_with($2))
 
+snippet test
+	class TestLiftPass:
+		def test_something(self) -> None:
+			client = app.test_client()
+
+			response = client.get("/prices", query_string={"type": "1jour"})
+
+			assert response.json == {'cost': 35}

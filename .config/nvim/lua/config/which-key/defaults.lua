@@ -12,12 +12,12 @@ return {
   t = { ":w<CR>:TestFile<cr>", "Run File"},
   f = { ":Telescope current_buffer_fuzzy_find<CR>", "Find in file"},
   F = { ":Telescope live_grep<CR>", "Find in files"},
-  rf = { [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
   re = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
   r = {
     name = "Replace",
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
+    f = { [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
     F = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
   },
   b = {

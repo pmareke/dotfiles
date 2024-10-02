@@ -45,15 +45,7 @@ return {
     ensure_installed = {
       "python",
       "yaml",
-      "ruby",
       "jsonc",
-      "go",
-      "gomod",
-      "gowork",
-      "gosum",
-      "elixir",
-      "heex",
-      "terraform"
     },
     incremental_selection = {
       enable = true,

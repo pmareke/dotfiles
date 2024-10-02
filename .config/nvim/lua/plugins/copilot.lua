@@ -9,7 +9,6 @@ return {
         markdown = true,
         gitcommit = true,
         hgcommit = true,
-        ruby = true,
         python = true,
         ["."] = false,
       },

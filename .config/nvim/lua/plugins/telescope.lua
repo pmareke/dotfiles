@@ -24,7 +24,7 @@ return {
           },
           previewer = false,
           prompt_prefix = "   ",
-          file_ignore_patterns = { "poetry.lock", "node_modules", "package-lock.json" },
+          file_ignore_patterns = { "*.approved.txt", "poetry.lock", "node_modules", "package-lock.json" },
           initial_mode = "insert",
           select_strategy = "reset",
           sorting_strategy = "ascending",

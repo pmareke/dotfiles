@@ -78,7 +78,6 @@ return {
     },
     config = function()
       local lsp_zero = require('lsp-zero')
-      lsp_zero.extend_lspconfig()
       lsp_zero.on_attach(function(_, bufnr)
         lsp_zero.default_keymaps({ buffer = bufnr })
         opts = { buffer = bufnr, silent = true }
@@ -88,23 +87,39 @@ return {
         vim.keymap.set('n', 'gr', ':Telescope lsp_references<cr>', { buffer = bufnr })
         vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
         vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-        vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-        vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-        vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-        vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+        vim.keymap.set('n', 'gs', ':Telescope grep_string<cr>', opts)
+        vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
         vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
         vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
         vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
       end)
       local lspconfig = require('lspconfig')
+      local on_attach = function(client, bufnr)
+        if client.name == 'ruff_lsp' then
+          client.server_capabilities.hoverProvider = false
+        end
+      end
+      lspconfig.ruff_lsp.setup {
+        on_attach = on_attach,
+      }
+      lspconfig.pyright.setup({
+        settings = {
+          pyright = {
+            disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              ignore = { '*' },
+            },
+          },
+        },
+      })
       require('mason').setup({})
       require('mason-lspconfig').setup({
         ensure_installed = {
           "jsonls",
           "pyright",
-          "terraformls",
-          "gopls",
-          "elixirls",
+          "ruff_lsp",
         },
         handlers = {
           lsp_zero.default_setup,
@@ -121,23 +136,13 @@ return {
           timeout_ms = 10000,
         },
         servers = {
-          ['black'] = { 'python' },
           ['jsonls'] = { 'json' },
-          ['terraformls'] = { 'terraform', 'tf' },
-          ['gopls'] = { 'go' },
-          ['elixirls'] = { 'elixir', 'ex', 'exs' },
+          ['ruff_lsp'] = { 'python' },
         }
       })
 
       lsp_zero.set_preferences({
         suggest_lsp_servers = false,
-      })
-
-      lsp_zero.set_sign_icons({
-        error = "E",
-        warn = "W",
-        hint = "H",
-        info = "I",
       })
 
       vim.diagnostic.config({
@@ -154,6 +159,26 @@ return {
           header = "",
           prefix = "",
         },
+      })
+
+      lsp_zero.set_sign_icons({
+        error = '✘',
+        warn = '▲',
+        hint = '⚑',
+        info = '»',
+      })
+      
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        pattern = { "*.py" },
+        callback = function()
+          vim.lsp.buf.code_action {
+            context = {
+              only = { 'source.organizeImports.ruff' },
+            },
+            apply = true,
+          }
+          vim.lsp.buf.format({async = true})
+        end,
       })
     end
   },
