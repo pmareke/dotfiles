@@ -94,14 +94,6 @@ return {
         vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
       end)
       local lspconfig = require('lspconfig')
-      local on_attach = function(client, bufnr)
-        if client.name == 'ruff_lsp' then
-          client.server_capabilities.hoverProvider = false
-        end
-      end
-      lspconfig.ruff_lsp.setup {
-        on_attach = on_attach,
-      }
       lspconfig.pyright.setup({
         settings = {
           pyright = {
@@ -119,7 +111,7 @@ return {
         ensure_installed = {
           "jsonls",
           "pyright",
-          "ruff_lsp",
+          "ruff"
         },
         handlers = {
           lsp_zero.default_setup,
@@ -137,7 +129,7 @@ return {
         },
         servers = {
           ['jsonls'] = { 'json' },
-          ['ruff_lsp'] = { 'python' },
+          ['ruff'] = { 'python' },
         }
       })
 

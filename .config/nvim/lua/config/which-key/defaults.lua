@@ -129,8 +129,9 @@ return {
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
   },
   o = {
-    name = "Overseer",
-    r = { ":OverseerRun<CR>", "Run task" },
-    t = { ":OverseerToggle<CR>", "Toggle panel tasks" },
+    name = "Open repo url",
+    r = { ":OpenInGHRepo<CR>", "Open repository" },
+    f = { ":OpenInGHFile<CR>", "Open file" },
+    l = { ":OpenInGHFileLines<CR>", "Open line" },
   },
 }

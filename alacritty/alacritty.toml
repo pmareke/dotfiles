@@ -1,0 +1,26 @@
+[general]
+
+import = [
+  "~/.config/alacritty/catppuccin-latte.toml"
+]
+
+[window]
+
+padding = { x = 10, y = 10 }
+decorations = "ButtonLess"
+
+[font]
+
+normal = { family = "FiraCode Nerd Font Mono" }
+bold = { family = "FiraCode Nerd Font Mono" }
+italic = {family = "FiraCode Nerd Font Mono" }
+bold_italic = { family = "FiraCode Nerd Font Mono" }
+size = 18.0
+
+[cursor]
+
+style = { shape = "Underline", blinking = "Off" }
+
+[mouse]
+
+hide_when_typing = true
