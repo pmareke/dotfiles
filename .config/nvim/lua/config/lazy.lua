@@ -17,7 +17,10 @@ vim.api.nvim_create_augroup("AutoFormat", {})
 require("lazy").setup("plugins", {
   install = {
     missing = true,
-    colorscheme = { "catppuccin-latte"}
+    colorscheme = { 
+      -- "catppuccin-latte",
+      "base16-default-dark",
+    }
   },
   checker = {
     enabled = true,

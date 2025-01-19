@@ -3,6 +3,5 @@ return {
   dependencies = {
     'stevearc/dressing.nvim',
   },
-  opts = {
-  }
+  opts = {}
 }

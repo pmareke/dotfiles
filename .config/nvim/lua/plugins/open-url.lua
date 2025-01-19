@@ -1,5 +1,4 @@
-return -- lazy.nvim
-{
+return {
     "sontungexpt/url-open",
     branch = "main",
     event = "VeryLazy",
