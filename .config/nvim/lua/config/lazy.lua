@@ -18,8 +18,7 @@ require("lazy").setup("plugins", {
   install = {
     missing = true,
     colorscheme = { 
-      -- "catppuccin-latte",
-      "base16-default-dark",
+      "catppuccin-mocha",
     }
   },
   checker = {

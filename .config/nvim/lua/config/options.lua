@@ -52,7 +52,6 @@ local options = {
   sidescrolloff = 8,                       -- Makes sure there are always eight lines of context
   showcmd = false,                         -- Don't show the command in the last line
   ruler = false,                           -- Don't show the ruler
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
   title = true,                            -- set the title of window to the value of the titlestring
   confirm = true,                          -- confirm to save changes before exiting modified buffer
   fillchars = { eob = " " },               -- change the character at the end of buffer

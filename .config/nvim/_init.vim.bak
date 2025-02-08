@@ -1,5 +1,5 @@
 scriptencoding utf-8
-set guicursor+=n:hor20-Cursor/lCursor
+" set guicursor+=n:hor20-Cursor/lCursor
 set encoding=utf-8
 set backspace=indent,eol,start
 set history=500
@@ -99,7 +99,7 @@ augroup Mkdir
     autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
 
-au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
+" au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
 
 if has("autocmd")
   filetype plugin indent on
