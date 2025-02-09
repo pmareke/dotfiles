@@ -1,29 +1,32 @@
 export LANG=C
+export ZSH=~/.oh-my-zsh
 export TERM=xterm-256color
-export ZSH=/Users/pmareke/.oh-my-zsh
 export EDITOR='nvim'
 export SHELL='zsh'
 export FZF_DEFAULT_OPTS='--layout=default --border --min-height 15'
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_PREVIEW_COMMAND="bat --style=numbers,changes --wrap never --color always {} || cat {} || tree -C {}"
 export FZF_CTRL_T_OPTS="--min-height 10 --preview-window down:80% --preview-window noborder --preview '($FZF_PREVIEW_COMMAND) 2> /dev/null'"
-export PATH="/usr/local/bin:/opt/maven/bin:/usr/local/sbin:/Users/pmareke/Developer/go/go/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
+export PATH="$GOPATH/bin:/opt/X11/bin:/usr/X11/bin:/opt/homebrew/opt/libpq/bin:$HOME/bin:/Users/pedrolopezmareque/.local/bin:/Library/PostgreSQL/15/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export KUBECONFIG=~/.kube/configs/pro:~/.kube/configs/stg:~/.kube/configs/mgmt:~/.kube/configs/dev:~/.kube/configs/tools:~/.kube/configs/stg2
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export XDG_CONFIG_HOME=~/.config
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export HISTCONTROL=ignoreboth:erasedups
 
-plugins=(git z zsh-autosuggestions)
+plugins=(git z)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+ZSH_THEME="agnoster"
+# ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.fzf/shell/key-bindings.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-#
-# Completion
-#
 fpath=($HOME/.zsh/completions $fpath)
 
 autoload -U compinit
@@ -127,4 +130,14 @@ zstyle ':completion:*:*:cdr:*:*' menu selection
 # fall through to cd if cdr is passed a non-recent dir as an argument
 zstyle ':chpwd:*' recent-dirs-default true
 
-eval "$(starship init zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519_clarity
+
+prompt_dir() {
+  prompt_segment blue $CURRENT_FG '%1~'
+}
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
