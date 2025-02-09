@@ -3,7 +3,7 @@ return {
   version = "*",
   config = function()
     require("toggleterm").setup {
-      size = 20,
+      size = 19,
       open_mapping = [[<c-t>]],
       shade_filetypes = {},
       shade_terminals = true,

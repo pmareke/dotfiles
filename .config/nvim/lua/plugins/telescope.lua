@@ -11,8 +11,16 @@ return {
       'andrew-george/telescope-themes',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-        config = function()
+    config = function()
       require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = { 
+            "^.git/",
+             "poetry.lock",
+            "node_modules",
+            "package-lock.json"
+          },
+        },
         pickers = {
           find_files = {
             hidden = true,
