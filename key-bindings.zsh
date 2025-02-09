@@ -26,14 +26,19 @@ __fzfcmd() {
     echo "fzf-tmux -d${FZF_TMUX_HEIGHT:-40%}" || echo "fzf"
 }
 
-fzf-file-widget() {
-  LBUFFER="${LBUFFER}$(__fsel)"
-  local ret=$?
-  zle reset-prompt
-  return $ret
+function sesh-sessions() {
+  {
+    exec </dev/tty
+    exec <&1
+    local session
+    session=$(sesh list -i -t -c -d | fzf --ansi --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
+    zle reset-prompt > /dev/null 2>&1 || true
+    [[ -z "$session" ]] && return
+    sesh connect $session
+  }
 }
-zle     -N   fzf-file-widget
-bindkey '^T' fzf-file-widget
+zle     -N   sesh-sessions
+bindkey '^T' sesh-sessions
 
 # Ensure precmds are run after cd
 fzf-redraw-prompt() {
@@ -86,9 +91,9 @@ bindkey '^P' fzf-history-widget
 fkill() {
     local pid
     if [ "$UID" != "0" ]; then
-        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+        pid=$(ps -f -u $UID | sed 1d | fzf --reverse -m | awk '{print $2}')
     else
-        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+        pid=$(ps -ef | sed 1d | fzf --reverse -m | awk '{print $2}')
     fi
 
     if [ "x$pid" != "x" ]
@@ -96,6 +101,9 @@ fkill() {
         echo $pid | xargs kill -${1:-9}
     fi
 }
+
+zle     -N   fkill
+bindkey '^K' fkill
 
 fbr() {
   local branches branch
@@ -108,10 +116,35 @@ fbr() {
 zle     -N   fbr
 bindkey '^B' fbr
 
-fgf() {
-  git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+function dc() {
+  CONTAINER=`docker ps | ag -v CONTAINER | awk '-F ' ' {print $NF}' | fzf --height 50% --reverse --border`
+  if [ ! -z $CONTAINER ]
+  then
+    docker exec -it $CONTAINER bash
+  fi
 }
-zle     -N   fgf
-bindkey '^F' fgf
+
+function dl() {
+  CONTAINER=`docker ps | ag -v CONTAINER | awk '-F ' ' {print $NF}' | fzf --height 50% --reverse --border`
+  if [ ! -z $CONTAINER ]
+  then
+    docker logs -f $CONTAINER
+  fi
+}
+
+function prune() {
+  docker stop $(docker ps -a -q)
+  docker volume prune --all -f
+  docker system prune --all -f
+}
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 fi
