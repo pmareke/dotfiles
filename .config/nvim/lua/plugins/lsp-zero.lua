@@ -111,7 +111,8 @@ return {
         ensure_installed = {
           "jsonls",
           "pyright",
-          "ruff"
+          "ruff",
+          "elixirls",
         },
         handlers = {
           lsp_zero.default_setup,
@@ -130,6 +131,7 @@ return {
         servers = {
           ['jsonls'] = { 'json' },
           ['ruff'] = { 'python' },
+          ['elixirls'] = { 'elixir' },
         }
       })
 

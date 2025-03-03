@@ -1,0 +1,21 @@
+[[database]]
+Name = 'DQMS local'
+Provider = 'postgres'
+DBName = 'dqms'
+URL = 'postgres://dqms:password@localhost:5432/dqms?sslmode=disable'
+
+[[database]]
+Name = 'DQMS dev'
+Provider = 'postgres'
+DBName = 'dqms'
+URL = 'postgres://@localhost:10115/dqms'
+
+[[database]]
+Name = 'DQMS mgmt'
+Provider = 'postgres'
+DBName = 'dqms'
+URL = 'postgres://@localhost:10067/dqms'
+
+[application]
+DefaultPageSize = 100
+DisableSidebar = true

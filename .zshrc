@@ -19,8 +19,7 @@ export HISTCONTROL=ignoreboth:erasedups
 
 plugins=(git z)
 
-ZSH_THEME="agnoster"
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="simple"
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
