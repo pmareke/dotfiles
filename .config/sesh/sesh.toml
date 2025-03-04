@@ -1,0 +1,14 @@
+[[session]]
+name = "Python  "
+path = "~/Developer/python"
+startup_command = "la"
+
+[[session]]
+name = "Ruby  "
+path = "~/Developer/ruby"
+startup_command = "la"
+
+[[session]]
+name = "DQMS"
+path = "~/Developer/clarity/data-governance-and-quality/dqms"
+startup_command = "la"
