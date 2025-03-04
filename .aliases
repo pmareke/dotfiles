@@ -1,7 +1,8 @@
-alias ls='exa'
+alias ls='lsd'
 alias ll='ls -l'
 alias la='ls -la'
 alias x='exit'
+alias _z='zed'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
@@ -11,46 +12,29 @@ alias o='open .'
 alias rf='rm -rf'
 alias t='tree -L 1'
 alias cat='bat'
-
-# Python
-alias python=python3
-alias ac='source venv/bin/activate'
-alias dc=deactivate
+alias tmux='tmux new-session -s'
 
 alias aliasconfig='vim ~/.aliases'
 alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.config/nvim/init.vim'
+alias vimconfig='cd ~/.config/nvim/ && vim .'
 alias tmuxconfig='vim ~/.tmux.conf'
+alias seshconfig='vim ~/.config/sesh/sesh.toml'
+alias alacrittyconfig='vim ~/.config/alacritty/alacritty.toml'
 alias gitconfig='vim ~/.gitconfig'
 
 alias ga='git add -p'
 alias gdi='git checkout -- .'
 
 ## K8S
-alias k='kube-prompt'
-alias ktx='kubectx'
-alias kns='kubens'
+alias _k='kubectl'
 
-# EU
-alias gsh="gcloud compute ssh --tunnel-through-iap"
-alias gcp="gcloud compute scp --tunnel-through-iap"
+## K9S
+alias _k9s='tmuxinator start k9s'
+alias dev='k9s --kubeconfig ~/.kube/configs/dev -A'
+alias stg='k9s --kubeconfig ~/.kube/configs/stg -A'
+alias pro='k9s --kubeconfig ~/.kube/configs/pro -A'
+alias mgmt='k9s --kubeconfig ~/.kube/configs/mgmt -A'
 
-# BR
-alias gshbr="gcloud compute ssh --tunnel-through-iap --zone southamerica-east1-b"
-alias gcpbr="gcloud compute scp --tunnel-through-iap --zone southamerica-east1-b"
-
-# USC
-alias gshus="gcloud compute ssh --tunnel-through-iap --zone us-central1-a"
-alias gcpus="gcloud compute scp --tunnel-through-iap --zone us-central1-a"
-
-alias k9sbr="KUBECONFIG=~/.kube/config_br k9s"
-alias kbr="KUBECONFIG=~/.kube/config_br kubectl"
-alias k9susc="KUBECONFIG=~/.kube/config_usc k9s"
-alias kusc="KUBECONFIG=~/.kube/config_usc kubectl"
-
-#CONTENT-EXTRACTION cluster
-alias k9scontent="KUBECONFIG=~/.kube/config_content k9s"
-
-# DOCKER
-alias drm='docker rm -f $(docker ps -aq)'
-
+## ctool
+alias admin_token="ctool get admin token | pbcopy"
