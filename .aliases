@@ -1,4 +1,4 @@
-alias ls='lsd'
+alias ls='eza'
 alias ll='ls -l'
 alias la='ls -la'
 alias x='exit'
