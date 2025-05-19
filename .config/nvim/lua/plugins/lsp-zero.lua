@@ -112,7 +112,6 @@ return {
           "jsonls",
           "pyright",
           "ruff",
-          "elixirls",
         },
         handlers = {
           lsp_zero.default_setup,
@@ -131,7 +130,6 @@ return {
         servers = {
           ['jsonls'] = { 'json' },
           ['ruff'] = { 'python' },
-          ['elixirls'] = { 'elixir' },
         }
       })
 

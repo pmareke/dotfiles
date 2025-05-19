@@ -7,7 +7,7 @@ return {
   },
   event = "VeryLazy",
   keys = {
-    { "<C-n>", ":Neotree toggle left<CR>",  silent = true, desc = "Left File Explorer" },
+    { "<C-n>", ":Neotree toggle right<CR>",  silent = true, desc = "Left File Explorer" },
   },
   config = function()
     require("neo-tree").setup({
@@ -57,6 +57,7 @@ return {
           hide_gitignored = false,
           hide_by_name = {
             "node_modules",
+            ".venv"
           },
           never_show = {
             ".ruff_cache",

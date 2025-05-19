@@ -1,4 +1,6 @@
 export LANG=C
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export ZSH=~/.oh-my-zsh
 export TERM=xterm-256color
 export EDITOR='nvim'
@@ -7,17 +9,14 @@ export FZF_DEFAULT_OPTS='--layout=default --border --min-height 15'
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_PREVIEW_COMMAND="bat --style=numbers,changes --wrap never --color always {} || cat {} || tree -C {}"
 export FZF_CTRL_T_OPTS="--min-height 10 --preview-window down:80% --preview-window noborder --preview '($FZF_PREVIEW_COMMAND) 2> /dev/null'"
-export PATH="$GOPATH/bin:/opt/X11/bin:/usr/X11/bin:/opt/homebrew/opt/libpq/bin:$HOME/bin:/Users/pedrolopezmareque/.local/bin:/Library/PostgreSQL/15/bin:$PATH"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-export KUBECONFIG=~/.kube/configs/pro:~/.kube/configs/stg:~/.kube/configs/mgmt:~/.kube/configs/dev:~/.kube/configs/tools:~/.kube/configs/stg2
+export PATH="/opt/X11/bin:/usr/X11/bin:/opt/homebrew/opt/libpq/bin:$HOME/bin:/Users/pedro.lopez/.local/bin:/opt/homebrew/bin:$PATH"
+export KUBECONFIG=~/.kube/configs/mgmt:~/.kube/configs/dev
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export XDG_CONFIG_HOME=~/.config
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 export HISTCONTROL=ignoreboth:erasedups
 
-plugins=(git z)
+plugins=(git z pyautoenv virtualenv)
 
 ZSH_THEME="simple"
 
@@ -129,14 +128,18 @@ zstyle ':completion:*:*:cdr:*:*' menu selection
 # fall through to cd if cdr is passed a non-recent dir as an argument
 zstyle ':chpwd:*' recent-dirs-default true
 
-
 autoload -U +X bashcompinit && bashcompinit
 
-eval "$(ssh-agent -s)"
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519_clarity
+eval "$(ssh-agent -s)" >> /dev/null 2>&1
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519_clarity >> /dev/null 2>&1
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519 >> /dev/null 2>&1
 
 prompt_dir() {
   prompt_segment blue $CURRENT_FG '%1~'
 }
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# eval "$(direnv hook zsh)"

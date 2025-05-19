@@ -18,7 +18,8 @@ return {
             "^.git/",
              "poetry.lock",
             "node_modules",
-            "package-lock.json"
+            "package-lock.json",
+            "__init__.py",
           },
         },
         pickers = {
