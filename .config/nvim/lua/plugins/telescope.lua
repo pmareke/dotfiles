@@ -20,6 +20,9 @@ return {
             "node_modules",
             "package-lock.json",
             "__init__.py",
+            ".venv",
+            "__pycache__",
+            ".pytest_cache"
           },
         },
         pickers = {

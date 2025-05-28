@@ -81,13 +81,12 @@ return {
       lsp_zero.on_attach(function(_, bufnr)
         lsp_zero.default_keymaps({ buffer = bufnr })
         opts = { buffer = bufnr, silent = true }
-        vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-        vim.keymap.set('n', 'gd', ':Telescope lsp_definitions<cr>', opts)
-        vim.keymap.set('n', 'gi', ':Telescope lsp_implementations<cr>', opts)
-        vim.keymap.set('n', 'gr', ':Telescope lsp_references<cr>', { buffer = bufnr })
-        vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-        vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
         vim.keymap.set('n', 'gs', ':Telescope grep_string<cr>', opts)
+        vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+        vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+        vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+        vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
         vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
         vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
         vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
@@ -112,6 +111,7 @@ return {
           "jsonls",
           "pyright",
           "ruff",
+          "ty"
         },
         handlers = {
           lsp_zero.default_setup,
@@ -130,6 +130,7 @@ return {
         servers = {
           ['jsonls'] = { 'json' },
           ['ruff'] = { 'python' },
+          ['ty'] = { 'python' },
         }
       })
 

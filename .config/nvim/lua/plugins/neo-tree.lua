@@ -57,7 +57,6 @@ return {
           hide_gitignored = false,
           hide_by_name = {
             "node_modules",
-            ".venv"
           },
           never_show = {
             ".ruff_cache",
