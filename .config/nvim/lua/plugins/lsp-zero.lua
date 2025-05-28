@@ -130,7 +130,6 @@ return {
         servers = {
           ['jsonls'] = { 'json' },
           ['ruff'] = { 'python' },
-          ['ty'] = { 'python' },
         }
       })
 
