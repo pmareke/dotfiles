@@ -98,7 +98,8 @@ return {
         ensure_installed = {
           "jsonls",
           "ruff",
-          "ty"
+          "ty",
+          "pylsp"
         },
         handlers = {
           lsp_zero.default_setup,
