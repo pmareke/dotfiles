@@ -93,25 +93,24 @@ return {
         vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
       end)
       local lspconfig = require('lspconfig')
-      lspconfig.pyright.setup({
+      lspconfig.basedpyright.setup({
         settings = {
-          pyright = {
+          basedpyright = {
             disableOrganizeImports = true,
-          },
-          python = {
             analysis = {
+              autoImportCompletions = true,
               ignore = { '*' },
-              diagnosticMode = "off",
+              diagnosticMode = "openFilesOnly",
               typeCheckingMode = "off"
             },
-          },
+          }
         },
       })
       require('mason').setup({})
       require('mason-lspconfig').setup({
         ensure_installed = {
           "jsonls",
-          "pyright",
+          "basedpyright",
           "ruff",
           "ty"
         },
