@@ -74,7 +74,6 @@ return {
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'williamboman/mason-lspconfig.nvim' },
-      { 'b0o/schemastore.nvim' }
     },
     config = function()
       local lsp_zero = require('lsp-zero')
