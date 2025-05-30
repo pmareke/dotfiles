@@ -74,6 +74,7 @@ return {
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'williamboman/mason-lspconfig.nvim' },
+      { 'b0o/schemastore.nvim' },
     },
     config = function()
       local lsp_zero = require('lsp-zero')
@@ -106,9 +107,33 @@ return {
           },
         },
       })
+
+      lspconfig.jsonls.setup {
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
+        },
+      }
+
+      lspconfig.yamlls.setup {
+        settings = {
+          yaml = {
+            schemaStore = {
+              enable = false,
+              url = "",
+            },
+            schemas = require('schemastore').yaml.schemas(),
+          },
+        },
+      }
+
       require('mason').setup({})
       require('mason-lspconfig').setup({
         ensure_installed = {
+          "jsonls",
+          "yamlls",
           "pyright",
           "ruff",
           "ty"
