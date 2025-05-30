@@ -5,8 +5,6 @@ customCommands:
   - key: "C"
     command: git commit
     context: "global"
-    subprocess: true
   - key: "P"
     command: git push
     context: "global"
-    subprocess: true

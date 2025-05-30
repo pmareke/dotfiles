@@ -11,7 +11,7 @@ k9s:
     logoless: true
     crumbsless: true
     noIcons: true
-    skin: catppuccin-latte
+    skin: transparent
   skipLatestRevCheck: false
   disablePodCounting: false
   shellPod:

@@ -18,14 +18,12 @@ export HISTCONTROL=ignoreboth:erasedups
 
 plugins=(git z pyautoenv virtualenv)
 
-# ZSH_THEME="simple"
 ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.fzf/shell/key-bindings.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source "$HOME/.rye/env"
 
 fpath=($HOME/.zsh/completions $fpath)
 
