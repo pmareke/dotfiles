@@ -110,6 +110,7 @@ return {
       require('mason-lspconfig').setup({
         ensure_installed = {
           "jsonls",
+          "yamlls",
           "pyright",
           "ruff",
           "ty"
