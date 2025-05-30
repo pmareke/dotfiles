@@ -109,8 +109,6 @@ return {
       require('mason').setup({})
       require('mason-lspconfig').setup({
         ensure_installed = {
-          "jsonls",
-          "yamlls",
           "pyright",
           "ruff",
           "ty"
@@ -130,7 +128,6 @@ return {
           timeout_ms = 10000,
         },
         servers = {
-          ['jsonls'] = { 'json' },
           ['ruff'] = { 'python' },
         }
       })
