@@ -5,6 +5,8 @@ customCommands:
   - key: "C"
     command: git commit
     context: "global"
+    output: terminal
   - key: "P"
     command: git push
     context: "global"
+    output: terminal
