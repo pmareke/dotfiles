@@ -1,8 +1,10 @@
 Personal dotfiles:
 
-├── alacritty
-├── k9s
-├── lazygit
-├── lazysql
-├── nvim
-└── sketchybar
+- tmux
+- zsh
+- alacritty
+- k9s
+- lazygit
+- lazysql
+- nvim
+- sketchybar
