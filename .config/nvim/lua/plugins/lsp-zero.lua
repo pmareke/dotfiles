@@ -81,14 +81,15 @@ return {
       lsp_zero.on_attach(function(_, bufnr)
         lsp_zero.default_keymaps({ buffer = bufnr })
         opts = { buffer = bufnr, silent = true }
-        vim.keymap.set('n', 'gs', ':Telescope grep_string<CR>', opts)
-        vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-        vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-        vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-        vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+        vim.lsp.inlay_hint.enable(true)
         vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-        vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+        vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+        vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+        vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+        vim.keymap.set('n', 'gh',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+        vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+        vim.keymap.set('n', 'gs', ':Telescope grep_string<CR>', opts)
         vim.keymap.set("n", "gx", ":URLOpenUnderCursor<CR>")
         vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
         vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
@@ -139,7 +140,8 @@ return {
           "yamlls",
           "pyright",
           "ruff",
-          "ty"
+          "ty",
+          "rust_analyzer",
         },
         handlers = {
           lsp_zero.default_setup,
@@ -157,6 +159,7 @@ return {
         },
         servers = {
           ['ruff'] = { 'python' },
+          ['rust_analyzer'] = { 'rust' },
         }
       })
 
