@@ -28,7 +28,6 @@ return {
     name = "+LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions"},
     A = { "<cmd>lua vim.lsp.buf.range_code_action()<CR>", "Range Code Actions" },
-    c = { "<cmd>lua require('config.utils').copyFilePathAndLineNumber()<CR>", "Copy File Path and Line Number" },
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
     e = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show error" },
     E = { "<cmd>Telescope quickfix<CR>", "Telescope Quickfix" },
