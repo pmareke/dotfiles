@@ -17,6 +17,7 @@ return {
           file_ignore_patterns = { 
             "^.git/",
              "poetry.lock",
+            ".venv",
             "node_modules",
             "package-lock.json",
             "__init__.py",
@@ -30,10 +31,28 @@ return {
             hidden = true,
             theme = "ivy",
           },
+          grep_string = {
+            theme = "ivy",
+          },
+          lsp_references = {
+            theme = "ivy",
+          },
+          lsp_incoming_calls = {
+            theme = "ivy",
+          },
+          lsp_implementations = {
+            theme = "ivy",
+          },
+          lsp_definitions = {
+            theme = "ivy",
+          },
+          lsp_type_definitions = {
+            theme = "ivy",
+          },
         },
         extensions = {
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown({}),
+            require("telescope.themes").get_ivy({}),
           },
         },
       })

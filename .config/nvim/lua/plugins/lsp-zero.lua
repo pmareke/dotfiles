@@ -21,7 +21,7 @@ return {
       {
         'saadparwaiz1/cmp_luasnip',
         'L3MON4D3/LuaSnip',
-        "honza/vim-snippets"
+        'honza/vim-snippets'
       },
     },
     config = function()
@@ -57,7 +57,7 @@ return {
           { name = 'treesitter' },
           { name = 'crates' },
           { name = 'tmux' },
-          { name = "copilot"},
+          { name = 'copilot'},
         },
         snippet = {
           expand = function(args)
@@ -83,14 +83,15 @@ return {
         opts = { buffer = bufnr, silent = true }
         vim.lsp.inlay_hint.enable(true)
         vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-        vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+        vim.keymap.set('n', 'gA', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
+        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
         vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
         vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-        vim.keymap.set('n', 'gh',  '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-        vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+        vim.keymap.set('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+        vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>', opts)
         vim.keymap.set('n', 'gs', ':Telescope grep_string<CR>', opts)
-        vim.keymap.set("n", "gx", ":URLOpenUnderCursor<CR>")
+        vim.keymap.set('n', 'gu', ':Telescope lsp_incoming_calls<CR>', opts)
+        vim.keymap.set('n', 'gx', ':URLOpenUnderCursor<CR>')
         vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
         vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
       end)
@@ -105,8 +106,8 @@ return {
           python = {
             analysis = {
               ignore = { '*' },
-              diagnosticMode = "off",
-              typeCheckingMode = "off"
+              diagnosticMode = 'off',
+              typeCheckingMode = 'off'
             },
           },
         },
@@ -126,7 +127,7 @@ return {
           yaml = {
             schemaStore = {
               enable = false,
-              url = "",
+              url = '',
             },
             schemas = require('schemastore').yaml.schemas(),
           },
@@ -136,12 +137,12 @@ return {
       require('mason').setup({})
       require('mason-lspconfig').setup({
         ensure_installed = {
-          "jsonls",
-          "yamlls",
-          "pyright",
-          "ruff",
-          "ty",
-          "rust_analyzer",
+          'jsonls',
+          'yamlls',
+          'pyright',
+          'ruff',
+          'ty',
+          'rust_analyzer',
         },
         handlers = {
           lsp_zero.default_setup,
@@ -175,11 +176,11 @@ return {
         virtual_text     = false,
         update_in_insert = false,
         float            = {
-          source = "always",
-          style = "minimal",
-          border = "rounded",
-          header = "",
-          prefix = "",
+          source = 'always',
+          style = 'minimal',
+          border = 'rounded',
+          header = '',
+          prefix = '',
         },
       })
 
@@ -190,8 +191,8 @@ return {
         info = '»',
       })
       
-      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        pattern = { "*.py" },
+      vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+        pattern = { '*.py' },
         callback = function()
           vim.lsp.buf.code_action {
             context = {
