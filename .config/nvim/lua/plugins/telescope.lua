@@ -31,6 +31,9 @@ return {
             hidden = true,
             theme = "ivy",
           },
+          live_grep = {
+            theme = "ivy",
+          },
           grep_string = {
             theme = "ivy",
           },
