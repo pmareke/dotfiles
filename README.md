@@ -13,14 +13,14 @@ Personal dotfiles for the following tools:
       - lsp: LSP configurations.
       - autocmds: list of specify commands to be executed automatically.
     - Plugins:
-      - blink.
-      - bufferline.
-      - copilot.
-      - fidget.
-      - fine-cmdline.
-      - gitsigns.
-      - hardtime.
-      - lualine.
+      - [blink](https://github.com/Saghen/blink.cmp): a completion plugin.
+      - [bufferline](https://github.com/akinsho/bufferline.nvim): tabs plugin.
+      - [copilot](https://github.com/zbirenbaum/copilot.lua): enhanced replacement for copilot.vim.
+      - [fidget](https://github.com/j-hui/fidget.nvim): Neovim notifications and LSP progress messages.
+      - [fine-cmdline](https://github.com/VonHeikemen/fine-cmdline.nvim): ex-commands in a nice floating input.
+      - [gitsigns](https://github.com/lewis6991/gitsigns.nvim): Git integtation.
+      - [hardtime](https://github.com/m4xshen/hardtime.nvim): Block repeated keys in Vim.
+      - [lualine](https://github.com/nvim-lualine/lualine.nvim): a Neovim statusline.
       - mini-pairs.
       - mkdir.
       - neo-tree.
