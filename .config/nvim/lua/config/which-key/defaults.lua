@@ -10,7 +10,6 @@ return {
   h = { ":nohlsearch<CR>", "No Highlight" },
   n = { ":BufferLineCycleNext<CR>", "Next tab" },
   t = { ":w<CR>:TestFile<CR>", "Test File" },
-  tc = { "<cmd>VimuxCloseRunner<CR>", "Close Test panel" },
   f = { ":Telescope current_buffer_fuzzy_find<CR>", "Find in file" },
   F = { ":Telescope live_grep<CR>", "Find in files" },
   rn = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
