@@ -2,7 +2,6 @@ alias ls='eza'
 alias ll='ls -l'
 alias la='ls -la'
 alias x='exit'
-alias _z='zed'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
@@ -12,7 +11,6 @@ alias o='open .'
 alias rf='rm -rf'
 alias t='tree -L 1'
 alias cat='bat'
-alias tmux='tmux new-session -s'
 
 alias aliasconfig='vim ~/.aliases'
 alias zshconfig='vim ~/.zshrc'
@@ -20,21 +18,8 @@ alias vimconfig='vim ~/.config/nvim/init.vim'
 alias vimconfig='cd ~/.config/nvim/ && vim .'
 alias tmuxconfig='vim ~/.tmux.conf'
 alias seshconfig='vim ~/.config/sesh/sesh.toml'
-alias alacrittyconfig='vim ~/.config/alacritty/alacritty.toml'
+alias ghosttyconfig='vim ~/.config/ghostty/config'
 alias gitconfig='vim ~/.gitconfig'
 
 alias ga='git add -p'
 alias gdi='git checkout -- .'
-
-## K8S
-alias _k='kubectl'
-
-## K9S
-alias _k9s='tmuxinator start k9s'
-alias dev='k9s --kubeconfig ~/.kube/configs/dev -A'
-alias stg='k9s --kubeconfig ~/.kube/configs/stg -A'
-alias pro='k9s --kubeconfig ~/.kube/configs/pro -A'
-alias mgmt='k9s --kubeconfig ~/.kube/configs/mgmt -A'
-
-## ctool
-alias admin_token="ctool get admin token | pbcopy"
