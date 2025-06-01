@@ -1,4 +1,4 @@
-Personal dotfiles:
+Personal dotfiles for the following tools:
 
 - [tmux](https://github.com/tmux/tmux/wiki): a terminal multiplexer.
 - [oh-my-zsh](https://ohmyz.sh/): a framework for managing zsh configurations.
@@ -6,4 +6,38 @@ Personal dotfiles:
 - [k9s](https://k9scli.io/): a terminal based UI to interact with your Kubernetes clusters.
 - [lazygit](https://github.com/jesseduffield/lazygit): a terminal UI for git commands.
 - [nvim](https://neovim.io/): a Vim-based text editor.
+    - keymaps.
+    - options.
+    - lazy.
+    - lsp.
+      - jsonls.
+      - yamlls.
+      - lua.
+      - pyright.
+      - ruff.
+      - ty.
+    - autocmds.
+    - plugins:
+      - blink.
+      - bufferline.
+      - copilot.
+      - fidget.
+      - fine-cmdline.
+      - gitsigns.
+      - hardtime.
+      - lualine.
+      - mini-pairs.
+      - mkdir.
+      - neo-tree.
+      - notify.
+      - openingh.
+      - overseer.
+      - schemastore.
+      - spectre.
+      - surround.
+      - telescope.
+      - tree-sitter.
+      - trouble.
+      - vim-test.
+      - which-key.
 - [sketchybar](https://github.com/FelixKratz/SketchyBar): a highly customizable macOS status bar replacement.
