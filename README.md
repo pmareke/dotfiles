@@ -27,12 +27,12 @@ Personal dotfiles for the following tools:
       - [notify](https://github.com/rcarriga/nvim-notify): a notification manager for NeoVim.
       - [openingh](https://github.com/Almo7aya/openingh.nvim): Open file or project in GitHub.
       - [schemastore](https://github.com/b0o/SchemaStore.nvim): JSON schemas for Neovim.
-      - surround.
-      - telescope.
-      - tree-sitter.
-      - trouble.
-      - vim-test.
-      - which-key.
+      - [surround](https://github.com/kylechui/nvim-surround): Surround selections.
+      - [telescope](https://github.com/nvim-telescope/telescope.nvim): a fuzzy finder.
+      - [tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter): a plugin to interact with tree-sitter.
+      - [trouble](https://github.com/folke/trouble.nvim): pretty diagnostics, references, telescope results and more.
+      - [vim-test](https://github.com/vim-test/vim-test): Tests runner.
+      - [which-key](https://github.com/folke/which-key.nvim): key bindings plugin.
     - LSP servers:
       - [jsonls](https://github.com/Microsoft/vscode/blob/main/extensions/json-language-features/server/README.md): JSON language server.
       - [yamlls](https://github.com/redhat-developer/yaml-language-server): YAML language server.
