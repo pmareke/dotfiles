@@ -1,0 +1,13 @@
+theme = NvimDark
+
+macos-titlebar-style = hidden
+window-padding-x = 10
+window-padding-y = 10
+
+font-family = "JetBrainsMono Nerd Font"
+font-style = "semibold"
+font-size = 18
+
+cursor-style = underline
+cursor-style-blink = false
+shell-integration-features = no-cursor
