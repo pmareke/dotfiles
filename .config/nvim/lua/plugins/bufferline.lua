@@ -1,3 +1,4 @@
+-- Tabs
 return {
   "akinsho/bufferline.nvim",
   dependencies = {
