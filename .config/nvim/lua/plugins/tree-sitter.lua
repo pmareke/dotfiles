@@ -37,17 +37,14 @@ return {
     { "<c-space>", desc = "Increment selection" },
     { "<bs>",      desc = "Decrement selection", mode = "x" },
   },
-  ---@type TSConfig
-  ---@diagnostic disable-next-line: missing-fields
   opts = {
     highlight = { enable = true },
     indent = { enable = true },
     ensure_installed = {
-      "python",
-      "yaml",
-      "jsonc",
       "lua",
-      "rust"
+      "jsonc",
+      "yaml",
+      "python",
     },
     incremental_selection = {
       enable = true,
