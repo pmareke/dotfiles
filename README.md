@@ -6,12 +6,13 @@ Personal dotfiles for the following tools:
 - [k9s](https://k9scli.io/): a terminal based UI to interact with your Kubernetes clusters.
 - [lazygit](https://github.com/jesseduffield/lazygit): a terminal UI for git commands.
 - [nvim](https://neovim.io/): a Vim-based text editor.
-    - keymaps.
-    - options.
-    - lazy.
-    - lsp.
-    - autocmds.
-    - plugins:
+    - Configurations:
+      - keymaps: list of keybinds.
+      - options: list of Vim options.
+      - [lazy](https://github.com/LazyVim/LazyVim): Neovim package manager.
+      - lsp: LSP configurations.
+      - autocmds: list of specify commands to be executed automatically.
+    - Plugins:
       - blink.
       - bufferline.
       - copilot.
@@ -34,7 +35,7 @@ Personal dotfiles for the following tools:
       - trouble.
       - vim-test.
       - which-key.
-    - servers:
+    - LSP servers:
       - [jsonls](https://github.com/Microsoft/vscode/blob/main/extensions/json-language-features/server/README.md): JSON language server.
       - [yamlls](https://github.com/redhat-developer/yaml-language-server): YAML language server.
       - [lua](https://github.com/LuaLS/lua-language-server): Lua language server.
