@@ -1,13 +1,10 @@
-theme = "Apple System Colors"
-
-macos-titlebar-style = "hidden"
-window-padding-x = 10
-window-padding-y = 10
-
+cursor-style = "underline"
+cursor-style-blink = false
 font-family = "JetBrainsMono Nerd Font"
 font-style = "semibold"
 font-size = 18
-
-cursor-style = "underline"
-cursor-style-blink = false
+macos-titlebar-style = "hidden"
 shell-integration-features = "no-cursor"
+theme = "Apple System Colors"
+window-padding-x = 10
+window-padding-y = 10
