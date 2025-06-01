@@ -4,16 +4,7 @@ return {
   root_markers = { ".git" },
   settings = {
     json = {
-      schemas = require('schemastore').json.schemas {
-        extra = {
-          {
-            description = 'Runtime',
-            fileMatch = '.run.yaml',
-            name = '.run.yaml',
-            url = 'https://example.com/schema/foo.json',
-          },
-        }
-      },
+      schemas = require('schemastore').json.schemas(),
       validate = { enable = true },
     },
   },
