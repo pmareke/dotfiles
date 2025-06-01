@@ -4,6 +4,9 @@ return {
     spaces = {
       '~/Developer/clarity/',
     },
+    keymap = {
+      prefix = '<leader>n'
+    }
   },
   cmd = 'Note',
   ft = 'note',

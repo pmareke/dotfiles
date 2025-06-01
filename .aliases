@@ -11,6 +11,7 @@ alias o='open .'
 alias rf='rm -rf'
 alias t='tree -L 1'
 alias cat='bat'
+alias note='nvim +Note'
 
 alias aliasconfig='vim ~/.aliases'
 alias zshconfig='vim ~/.zshrc'
