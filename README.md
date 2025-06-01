@@ -10,12 +10,6 @@ Personal dotfiles for the following tools:
     - options.
     - lazy.
     - lsp.
-      - jsonls.
-      - yamlls.
-      - lua.
-      - pyright.
-      - ruff.
-      - ty.
     - autocmds.
     - plugins:
       - blink.
@@ -40,4 +34,11 @@ Personal dotfiles for the following tools:
       - trouble.
       - vim-test.
       - which-key.
+    - servers:
+      - [jsonls](https://github.com/Microsoft/vscode/blob/main/extensions/json-language-features/server/README.md): JSON language server.
+      - [yamlls](https://github.com/redhat-developer/yaml-language-server): YAML language server.
+      - [lua](https://github.com/LuaLS/lua-language-server): Lua language server.
+      - [pyright](https://github.com/microsoft/pyright): Python language server.
+      - [ruff](https://github.com/astral-sh/ruff): Python formatter and linter.
+      - [ty](https://github.com/astral-sh/ty): Python typing checker.
 - [sketchybar](https://github.com/FelixKratz/SketchyBar): a highly customizable macOS status bar replacement.
