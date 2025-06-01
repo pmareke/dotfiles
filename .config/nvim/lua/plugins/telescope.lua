@@ -30,27 +30,51 @@ return {
           find_files = {
             hidden = true,
             theme = "ivy",
+            layout_config = {
+              height = 100,
+            },
           },
           live_grep = {
             theme = "ivy",
+            layout_config = {
+              height = 100,
+            },
           },
           grep_string = {
             theme = "ivy",
+            layout_config = {
+              height = 100,
+            },
           },
           lsp_references = {
             theme = "ivy",
+            layout_config = {
+              height = 100,
+            },
           },
           lsp_incoming_calls = {
             theme = "ivy",
+            layout_config = {
+              height = 100,
+            },
           },
           lsp_implementations = {
             theme = "ivy",
+            layout_config = {
+              height = 100,
+            },
           },
           lsp_definitions = {
             theme = "ivy",
+            layout_config = {
+              height = 100,
+            },
           },
           lsp_type_definitions = {
             theme = "ivy",
+            layout_config = {
+              height = 100,
+            },
           },
         },
         extensions = {
