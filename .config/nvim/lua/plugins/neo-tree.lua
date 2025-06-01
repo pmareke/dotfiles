@@ -57,6 +57,7 @@ return {
           hide_gitignored = false,
           hide_by_name = {
             "node_modules",
+            ".venv"
           },
           never_show = {
             ".ruff_cache",
@@ -69,14 +70,13 @@ return {
             ".mypy_cache",
             ".git",
             "_build",
-            ".projections.json"
           },
         },
       },
       event_handlers = {
         {
           event = "file_opened",
-          handler = function(file_path)
+          handler = function()
             require("neo-tree.command").execute({ action = "close" })
           end
         },
