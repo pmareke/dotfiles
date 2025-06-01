@@ -5,7 +5,6 @@ vim.lsp.enable({
   "pyright",
   "ruff",
   "ty",
-  "rust_analyzer",
 })
 
 vim.lsp.inlay_hint.enable(true)
