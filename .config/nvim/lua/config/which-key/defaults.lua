@@ -17,8 +17,6 @@ return {
   f = { ":Telescope current_buffer_fuzzy_find<CR>", "Find in file" },
   F = { ":Telescope live_grep<CR>", "Find in files" },
   rn = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-  rr = { "<cmd>lua require('spectre').open()<CR>", "Replace" },
-  rw = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Replace Word" },
   b = {
     name = "Buffers",
     f = { "<cmd>Telescope buffers previewer=false<CR>", "Find" },

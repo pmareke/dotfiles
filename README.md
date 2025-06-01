@@ -27,7 +27,6 @@ Personal dotfiles for the following tools:
       - [notify](https://github.com/rcarriga/nvim-notify): a notification manager for NeoVim.
       - [openingh](https://github.com/Almo7aya/openingh.nvim): Open file or project in GitHub.
       - [schemastore](https://github.com/b0o/SchemaStore.nvim): JSON schemas for Neovim.
-      - spectre.
       - surround.
       - telescope.
       - tree-sitter.
