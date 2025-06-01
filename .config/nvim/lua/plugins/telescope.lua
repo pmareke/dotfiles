@@ -14,9 +14,9 @@ return {
     config = function()
       require("telescope").setup({
         defaults = {
-          file_ignore_patterns = { 
+          file_ignore_patterns = {
             "^.git/",
-             "poetry.lock",
+            "poetry.lock",
             ".venv",
             "node_modules",
             "package-lock.json",

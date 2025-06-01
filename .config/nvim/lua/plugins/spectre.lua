@@ -1,3 +1,3 @@
 return {
-    "windwp/nvim-spectre",
+  "windwp/nvim-spectre",
 }

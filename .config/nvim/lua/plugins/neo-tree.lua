@@ -7,7 +7,7 @@ return {
   },
   event = "VeryLazy",
   keys = {
-    { "<C-n>", ":Neotree toggle right<CR>",  silent = true, desc = "Left File Explorer" },
+    { "<C-n>", ":Neotree toggle right<CR>", silent = true, desc = "Left File Explorer" },
   },
   config = function()
     require("neo-tree").setup({

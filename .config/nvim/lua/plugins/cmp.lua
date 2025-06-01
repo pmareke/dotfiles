@@ -1,4 +1,4 @@
-return  {
+return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   dependencies = {
@@ -41,7 +41,7 @@ return  {
         { name = 'treesitter' },
         { name = 'crates' },
         { name = 'tmux' },
-        { name = 'copilot'},
+        { name = 'copilot' },
       },
       snippet = {
         expand = function(args)

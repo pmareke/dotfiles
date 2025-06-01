@@ -17,7 +17,7 @@ vim.api.nvim_create_augroup("AutoFormat", {})
 require("lazy").setup("plugins", {
   install = {
     missing = true,
-    colorscheme = { 
+    colorscheme = {
       -- "base16-default-dark"
       "catppuccin-mocha",
     }

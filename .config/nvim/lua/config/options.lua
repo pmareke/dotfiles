@@ -11,7 +11,7 @@ vim.cmd([[
 ]])
 
 local options = {
-  autoindent = true,                       -- copy indent from current line
+  autoindent = true, -- copy indent from current line
   syntax = "on",
   encoding = "utf-8",
   incsearch = true,                        -- make search act like search in modern browsers

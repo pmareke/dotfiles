@@ -1,6 +1,6 @@
 return {
   mode = { "n", "v" },
-  
+
   L = { ":Lazy<CR>", "Lazy" },
   w = { ":w!<CR>", "Save" },
   x = { ":x<CR>", "Save and Quit" },
@@ -8,14 +8,14 @@ return {
   c = { ":bd<CR>", "Close Buffer" },
   a = { ":A<CR>", "Alternate" },
   h = { ":nohlsearch<CR>", "No Highlight" },
-  n = { ":BufferLineCycleNext<CR>", "Next tab"},
-  t = { ":w<CR>:TestFile<CR>", "Test File"},
-  tn = { ":w<CR>:TestNearest<CR>", "Test Nearest"},
-  tl = { ":w<CR>:TestLast<CR>", "Test Last"},
-  tv = { ":w<CR>:TestVisit<CR>", "Test Visit"},
-  tc = { "<cmd>VimuxCloseRunner<CR>", "Close Test panel"},
-  f = { ":Telescope current_buffer_fuzzy_find<CR>", "Find in file"},
-  F = { ":Telescope live_grep<CR>", "Find in files"},
+  n = { ":BufferLineCycleNext<CR>", "Next tab" },
+  t = { ":w<CR>:TestFile<CR>", "Test File" },
+  tn = { ":w<CR>:TestNearest<CR>", "Test Nearest" },
+  tl = { ":w<CR>:TestLast<CR>", "Test Last" },
+  tv = { ":w<CR>:TestVisit<CR>", "Test Visit" },
+  tc = { "<cmd>VimuxCloseRunner<CR>", "Close Test panel" },
+  f = { ":Telescope current_buffer_fuzzy_find<CR>", "Find in file" },
+  F = { ":Telescope live_grep<CR>", "Find in files" },
   rn = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
   rr = { "<cmd>lua require('spectre').open()<CR>", "Replace" },
   rw = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Replace Word" },
@@ -26,7 +26,7 @@ return {
   },
   l = {
     name = "+LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions"},
+    a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
     A = { "<cmd>lua vim.lsp.buf.range_code_action()<CR>", "Range Code Actions" },
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
     e = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show error" },
@@ -42,7 +42,7 @@ return {
     S = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Display Signature Information" },
     u = { ":Telescope lsp_incoming_calls<CR>", "Go to usages" },
     w = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
-    x = {":URLOpenUnderCursor<CR>", "Open link" },
+    x = { ":URLOpenUnderCursor<CR>", "Open link" },
   },
   s = {
     name = "+Search",

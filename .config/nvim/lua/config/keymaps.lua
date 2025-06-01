@@ -10,7 +10,6 @@ map('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 map('n', 'gr', ':Telescope lsp_references<CR>', opts)
 map('n', 'gs', ':Telescope grep_string<CR>', opts)
 map('n', 'gu', ':Telescope lsp_incoming_calls<CR>', opts)
-map('n', 'gx', ':URLOpenUnderCursor<CR>')
 map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 
