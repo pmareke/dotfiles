@@ -46,6 +46,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
             },
             apply = true,
           }
+        end,
+      })
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
+        pattern = { "*.lua" },
+        callback = function()
           vim.lsp.buf.format({ bufnr = event.buf, id = client.id, timeout_ms = 1000 })
         end,
       })
