@@ -14,25 +14,25 @@ Personal dotfiles for the following tools:
       - autocmds: list of specify commands to be executed automatically.
     - Plugins:
       - [blink](https://github.com/Saghen/blink.cmp): a completion plugin.
-      - [bufferline](https://github.com/akinsho/bufferline.nvim): tabs plugin.
-      - [copilot](https://github.com/zbirenbaum/copilot.lua): enhanced replacement for copilot.vim.
+      - [bufferline](https://github.com/akinsho/bufferline.nvim): a tabs plugin.
+      - [copilot](https://github.com/zbirenbaum/copilot.lua): an enhanced replacement for copilot.vim.
       - [fidget](https://github.com/j-hui/fidget.nvim): Neovim notifications and LSP progress messages.
       - [fine-cmdline](https://github.com/VonHeikemen/fine-cmdline.nvim): ex-commands in a nice floating input.
-      - [gitsigns](https://github.com/lewis6991/gitsigns.nvim): Git integtation.
-      - [hardtime](https://github.com/m4xshen/hardtime.nvim): Block repeated keys in Vim.
+      - [gitsigns](https://github.com/lewis6991/gitsigns.nvim): git integration.
+      - [hardtime](https://github.com/m4xshen/hardtime.nvim): block repeated keys in Vim.
       - [lualine](https://github.com/nvim-lualine/lualine.nvim): a Neovim statusline.
       - [mini-pairs](https://github.com/echasnovski/mini.pairs): a plugin to automatically manage character pairs.
       - [mkdir](https://github.com/jghauser/mkdir.nvim): a plugin to creates missing folders on save..
       - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim): a plugin to browse the file system.
       - [notify](https://github.com/rcarriga/nvim-notify): a notification manager for NeoVim.
-      - [openingh](https://github.com/Almo7aya/openingh.nvim): Open file or project in GitHub.
+      - [openingh](https://github.com/Almo7aya/openingh.nvim): open files or projects in GitHub/Gitlab.
       - [schemastore](https://github.com/b0o/SchemaStore.nvim): JSON schemas for Neovim.
-      - [surround](https://github.com/kylechui/nvim-surround): Surround selections.
+      - [surround](https://github.com/kylechui/nvim-surround): surround selections.
       - [telescope](https://github.com/nvim-telescope/telescope.nvim): a fuzzy finder.
       - [tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter): a plugin to interact with tree-sitter.
       - [trouble](https://github.com/folke/trouble.nvim): pretty diagnostics, references, telescope results and more.
-      - [vim-test](https://github.com/vim-test/vim-test): Tests runner.
-      - [which-key](https://github.com/folke/which-key.nvim): key bindings plugin.
+      - [vim-test](https://github.com/vim-test/vim-test): tests runner.
+      - [which-key](https://github.com/folke/which-key.nvim): a key bindings plugin.
     - LSP servers:
       - [jsonls](https://github.com/Microsoft/vscode/blob/main/extensions/json-language-features/server/README.md): JSON language server.
       - [yamlls](https://github.com/redhat-developer/yaml-language-server): YAML language server.
