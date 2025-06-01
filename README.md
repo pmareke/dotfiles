@@ -21,13 +21,12 @@ Personal dotfiles for the following tools:
       - [gitsigns](https://github.com/lewis6991/gitsigns.nvim): Git integtation.
       - [hardtime](https://github.com/m4xshen/hardtime.nvim): Block repeated keys in Vim.
       - [lualine](https://github.com/nvim-lualine/lualine.nvim): a Neovim statusline.
-      - mini-pairs.
-      - mkdir.
-      - neo-tree.
-      - notify.
-      - openingh.
-      - overseer.
-      - schemastore.
+      - [mini-pairs](https://github.com/echasnovski/mini.pairs): a plugin to automatically manage character pairs.
+      - [mkdir](https://github.com/jghauser/mkdir.nvim): a plugin to creates missing folders on save..
+      - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim): a plugin to browse the file system.
+      - [notify](https://github.com/rcarriga/nvim-notify): a notification manager for NeoVim.
+      - [openingh](https://github.com/Almo7aya/openingh.nvim): Open file or project in GitHub.
+      - [schemastore](https://github.com/b0o/SchemaStore.nvim): JSON schemas for Neovim.
       - spectre.
       - surround.
       - telescope.
