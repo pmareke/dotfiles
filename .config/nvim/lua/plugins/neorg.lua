@@ -2,6 +2,7 @@ return {
   "nvim-neorg/neorg",
   dependencies = {
     "luarocks.nvim",
+    "nvim.lua/plenary.nvim",
     "nvim-neorg/neorg-telescope"
   },
   lazy = false,
@@ -35,4 +36,5 @@ return {
       },
     })
   end,
+  run = ":Neorg sync-parsers",
 }
