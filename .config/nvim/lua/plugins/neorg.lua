@@ -15,6 +15,9 @@ return {
           config = {
             icons = {
               todo = {
+                cancelled = {
+                  icon = "✘",
+                },
                 done = {
                   icon = "✔",
                 }
