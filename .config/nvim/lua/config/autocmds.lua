@@ -34,11 +34,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
-    if client and not client_supports_method(client, vim.lsp.protocol.Methods.textDocument_willSaveWaitUntil, event.buf)
-        and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_formatting, event.buf) then
-      vim.api.nvim_create_autocmd('BufWritePre', {
+    if client and client.name == 'ruff' then
+      vim.api.nvim_create_autocmd('BufWritePost', {
         group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
-        pattern = { "*.py" },
+        pattern = { "*.lua" },
+        callback = function()
+          vim.lsp.buf.format({ async = true })
+        end,
+      })
+      vim.api.nvim_create_autocmd('BufWritePost', {
+        group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
+        buffer = event.buf,
         callback = function()
           vim.lsp.buf.code_action {
             context = {
@@ -48,16 +54,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
           }
         end,
       })
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
-        pattern = { "*.lua" },
-        callback = function()
-          vim.lsp.buf.format({ bufnr = event.buf, id = client.id, timeout_ms = 1000 })
-        end,
-      })
-    end
-
-    if client and client.name == 'ruff' then
       client.server_capabilities.hoverProvider = false
     end
   end,
