@@ -11,7 +11,17 @@ return {
     require("neorg").setup({
       load = {
         ["core.defaults"] = {},
-        ["core.concealer"] = {},
+        ["core.concealer"] = {
+          config = {
+            icons = {
+              todo = {
+                done = {
+                  icon = "✔",
+                }
+              }
+            },
+          },
+        },
         ["core.ui.calendar"] = {},
         ["core.qol.toc"] = {},
         ["core.qol.todo_items"] = {},
