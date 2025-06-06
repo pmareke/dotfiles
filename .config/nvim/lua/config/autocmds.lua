@@ -33,32 +33,21 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end,
       })
     end
-
-    if client and not client_supports_method(client, vim.lsp.protocol.Methods.textDocument_willSaveWaitUntil, event.buf)
-        and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_formatting, event.buf) then
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
-        buffer = event.buf,
-        callback = function()
-          vim.lsp.buf.format({ async = true })
-        end,
-      })
-    end
-
-    if client and client.name == 'ruff' then
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
-        buffer = event.buf,
-        callback = function()
-          vim.lsp.buf.code_action {
-            context = {
-              only = { 'source.organizeImports.ruff' },
-            },
-            apply = true,
-          }
-        end,
-      })
-      client.server_capabilities.hoverProvider = false
-    end
   end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	callback = function()
+		if vim.bo.ft == "python" then
+			vim.lsp.buf.format()
+			vim.lsp.buf.code_action {
+				context = { only = { "source.fixAll.ruff" } },
+				apply = true,
+			}
+			vim.lsp.buf.code_action {
+				context = { only = { "source.organizeImports.ruff" } },
+				apply = true,
+			}
+		end
+	end,
 })

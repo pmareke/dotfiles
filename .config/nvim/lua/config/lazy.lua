@@ -14,10 +14,14 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.api.nvim_create_augroup("AutoFormat", {})
 
-require("lazy").setup("plugins", {
-  install = {
-    missing = true,
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
+
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
   },
+  install = { colorscheme = { "tokyonight" } },
   checker = {
     enabled = true,
     notify = false
