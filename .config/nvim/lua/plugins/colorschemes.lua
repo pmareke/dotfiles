@@ -1,7 +1,8 @@
 return {
   {
     "folke/tokyonight.nvim",
-    priority = 150,
+    enabled = false,
+    priority = 1000,
     opts = {
       on_colors = function(colors)
         colors.bg_statusline = "NONE"
@@ -14,7 +15,19 @@ return {
     },
     config = function(_, opts)
       require("tokyonight").setup(opts)
-      vim.cmd.colorscheme("tokyonight-night")
+      -- vim.cmd.colorscheme("tokyonight-night")
     end,
   },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require('lualine').setup()
+      require("catppuccin").setup({
+        transparent_background = true,
+      })
+      vim.cmd.colorscheme("catppuccin-mocha")
+    end,
+  }
 }
